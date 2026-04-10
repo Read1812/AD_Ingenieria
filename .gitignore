@@ -1,0 +1,11 @@
+# Config sensibles
+admin/config.php
+
+# Archivos de entorno
+.env
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
