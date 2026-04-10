@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <!-- SVG moderno -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo-simple.svg">
+    
+    <!-- PNG fallback -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    
+    <!-- Apple (iPhone) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    
+    <!-- Para tema claro/oscuro -->
+    <link rel="icon" href="/assets/logo-simple.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/assets/logo-simple.svg" media="(prefers-color-scheme: dark)">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AD Ingeniería | Consultoría en Ingeniería y Tecnología en Chile</title>
+  <meta name="description" content="AD Ingeniería — Consultoría especializada en Seguridad Electrónica, Automatización, Power Apps, Telecomunicaciones e Infraestructura de Redes en Chile." />
+  <meta name="keywords" content="ingeniería Chile, consultoría tecnológica, seguridad electrónica, Hik Central, Softguard, Power Apps Chile, Ubiquiti Chile, cableado estructurado" />
+  <link rel="canonical" href="https://adingenieria.cl/" />
+  <meta property="og:title" content="AD Ingeniería | Consultoría en Ingeniería y Tecnología en Chile" />
+  <meta property="og:description" content="Consultoría especializada en seguridad electrónica, automatización y transformación digital en Chile." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adingenieria.cl/" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #1a3bcc;
+      --blue-dark:  #1530a8;
+      --blue-light: #2a4de0;
+      --navy:       #0d1b3e;
+      --navy-deep:  #08122b;
+      --text:       #1a1a2e;
+      --muted:      #5a6073;
+      --bg-soft:    #f4f6fb;
+      --bg-mid:     #eef1f9;
+      --border:     #e2e6f0;
+      --white:      #ffffff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 60px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo img { height: 40px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 13.5px; color: var(--text); text-decoration: none;
+      font-weight: 500; opacity: 0.8; transition: opacity .2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .btn-primary {
+      background: var(--blue); color: var(--white); border: none;
+      padding: 9px 20px; border-radius: 6px; font-size: 13.5px;
+      font-weight: 600; cursor: pointer; text-decoration: none; transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.7);
+      padding: 9px 20px; border-radius: 6px; font-size: 13.5px;
+      font-weight: 600; cursor: pointer; text-decoration: none; transition: all .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; min-height: 520px;
+      display: flex; align-items: center;
+      background: var(--navy-deep); overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80') center/cover no-repeat;
+      opacity: 0.22;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(8,18,43,0.55) 0%, rgba(13,27,62,0.2) 60%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 560px; padding: 80px 48px;
+    }
+    .hero-breadcrumb {
+      font-size: 11.5px; color: rgba(255,255,255,0.55);
+      margin-bottom: 18px; letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 4vw, 46px); font-weight: 800;
+      color: var(--white); line-height: 1.18; margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 15px; color: rgba(255,255,255,0.75);
+      margin-bottom: 32px; line-height: 1.65; max-width: 440px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ─── ABOUT — blanco ─── */
+    .about {
+      padding: 80px 48px; max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .about-text h2 {
+      font-size: 28px; font-weight: 800; color: var(--text);
+      margin-bottom: 20px; line-height: 1.25;
+    }
+    .about-text p { font-size: 14.5px; color: var(--muted); margin-bottom: 14px; line-height: 1.7; }
+    .about-image { position: relative; border-radius: 14px; overflow: visible; }
+    .about-image img {
+      width: 100%; border-radius: 14px; object-fit: cover;
+      aspect-ratio: 4/3; display: block;
+    }
+    .quality-badge {
+      position: absolute; bottom: -18px; left: 20px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 10px 16px;
+      display: flex; align-items: center; gap: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+      font-size: 13px; font-weight: 600; color: var(--text);
+    }
+    .quality-badge .icon {
+      width: 32px; height: 32px; background: var(--blue);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    }
+    .quality-badge .icon svg { width: 18px; height: 18px; fill: white; }
+    .quality-sub { font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 1px; }
+
+    /* ─── SERVICIOS — bg-soft ─── */
+    .areas-section { background: var(--bg-soft); padding: 80px 48px; }
+    .areas-header { text-align: center; margin-bottom: 48px; }
+    .areas-header h2 { font-size: 28px; font-weight: 800; margin-bottom: 10px; }
+    .areas-header p { color: var(--muted); font-size: 14.5px; max-width: 460px; margin: 0 auto; line-height: 1.65; }
+    .areas-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .area-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px 28px 30px;
+      transition: box-shadow .2s, transform .2s;
+      text-decoration: none; display: block; color: inherit;
+    }
+    .area-card:hover { box-shadow: 0 8px 32px rgba(26,59,204,0.10); transform: translateY(-3px); }
+    .area-icon {
+      width: 44px; height: 44px; background: var(--bg-soft);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 16px;
+    }
+    .area-icon svg { width: 24px; height: 24px; stroke: var(--blue); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .area-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .area-card > p { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+    .area-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .area-tag {
+      font-size: 11px; font-weight: 600; padding: 3px 9px;
+      border-radius: 100px; background: var(--bg-soft); border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* ─── METODOLOGÍA — blanco ─── */
+    .methodology {
+      padding: 80px 48px; max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 72px; align-items: start;
+    }
+    .methodology-intro h2 {
+      font-size: 26px; font-weight: 800; color: var(--text);
+      margin-bottom: 14px; line-height: 1.25;
+    }
+    .methodology-intro p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+    .btn-sm {
+      display: inline-block; background: transparent; color: var(--text);
+      border: 1.5px solid var(--border); padding: 8px 18px; border-radius: 6px;
+      font-size: 13px; font-weight: 600; text-decoration: none; transition: all .2s;
+    }
+    .btn-sm:hover { border-color: var(--blue); color: var(--blue); }
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 24px 0; border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 36px; height: 36px; border: 2px solid var(--border);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 13px; font-weight: 700;
+      color: var(--muted); flex-shrink: 0; margin-top: 2px;
+      transition: border-color .2s, color .2s;
+    }
+    .step:hover .step-num { border-color: var(--blue); color: var(--blue); }
+    .step-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .step-content p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+    /* ─── CTA BAND — navy con gradiente ─── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, #112466 100%);
+      padding: 72px 48px; position: relative; overflow: hidden;
+    }
+    .cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 65% 100% at 95% 50%, rgba(26,59,204,0.22) 0%, transparent 70%);
+    }
+    .cta-inner {
+      max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    }
+    .cta-block h2 {
+      font-size: 24px; font-weight: 800; color: var(--white);
+      margin-bottom: 14px; line-height: 1.3;
+    }
+    .cta-block p { font-size: 14.5px; color: rgba(255,255,255,0.72); line-height: 1.7; }
+
+    /* ─── PORTAFOLIO — bg-mid ─── */
+    .portfolio-section { background: var(--bg-mid); padding: 80px 48px; }
+    .portfolio-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label-sm {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: block;
+    }
+    .portfolio-inner > h2 {
+      font-size: 28px; font-weight: 800; color: var(--text);
+      margin-bottom: 36px; line-height: 1.25;
+    }
+    .case-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      display: grid; grid-template-columns: 1fr auto;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    }
+    .case-content { padding: 40px; }
+    .case-badge {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue);
+      background: rgba(26,59,204,0.07); border: 1px solid rgba(26,59,204,0.15);
+      padding: 4px 10px; border-radius: 100px; margin-bottom: 18px;
+    }
+    .areas-cta {
+      display: flex;
+      justify-content: center; /* centra horizontal */
+      margin-top: 40px;
+    }
+        .case-content h3 {
+      font-size: 20px; font-weight: 800; color: var(--text);
+      margin-bottom: 12px; line-height: 1.3;
+    }
+    .case-content p { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 520px; }
+    .case-visual {
+      background: linear-gradient(160deg, var(--navy) 0%, #1a3bcc 100%);
+      min-width: 200px; display: flex; align-items: center; justify-content: center;
+    }
+    .case-visual svg { width: 52px; height: 52px; stroke: rgba(255,255,255,0.3); fill: none; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+    .portfolio-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 32px; font-size: 13.5px; font-weight: 600;
+      color: var(--blue); text-decoration: none; transition: gap .2s;
+    }
+    .portfolio-link:hover { gap: 10px; }
+    .portfolio-link svg { width: 14px; height: 14px; stroke: var(--blue); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ─── CONTACTO — blanco ─── */
+    .contact-section {
+      padding: 80px 48px; max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.2fr;
+      gap: 64px; align-items: start;
+    }
+    .contact-info h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+    .contact-info > p { font-size: 14.5px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+    .contact-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 22px; margin-bottom: 16px;
+    }
+    .contact-card h4 { font-size: 13.5px; font-weight: 700; margin-bottom: 12px; }
+    .contact-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13.5px; color: var(--muted); margin-bottom: 8px;
+    }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-item svg { width: 16px; height: 16px; stroke: var(--blue); fill: none; stroke-width: 2; flex-shrink: 0; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-item a { color: var(--muted); text-decoration: none; }
+    .contact-item a:hover { color: var(--blue); }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--text); }
+    .form-group input,
+    .form-group textarea {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--border); border-radius: 7px;
+      font-size: 14px; font-family: inherit; color: var(--text);
+      background: var(--white); transition: border-color .2s; outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #b0b5c8; }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { min-height: 110px; resize: vertical; }
+    .form-group select {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--border); border-radius: 7px;
+      font-size: 14px; font-family: inherit; color: var(--text);
+      background: var(--white); transition: border-color .2s;
+      outline: none; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6073' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; cursor: pointer;
+    }
+    .form-group select:focus { border-color: var(--blue); }
+    .field-error { display: block; font-size: 12px; color: #e53e3e; margin-top: 4px; min-height: 16px; }
+    .form-group input.error,
+    .form-group textarea.error { border-color: #e53e3e; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn-submit {
+      width: 100%; background: var(--blue); color: var(--white);
+      border: none; padding: 12px 20px; border-radius: 7px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; transition: background .2s;
+    }
+    .btn-submit:hover:not(:disabled) { background: var(--blue-dark); }
+    .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+    .form-note { text-align: center; font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+    /* ─── FOOTER — navy oscuro ─── */
+    footer {
+      background: var(--navy-deep);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 52px 48px 28px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand p {
+      font-size: 13.5px; color: rgba(255,255,255,0.38);
+      line-height: 1.65; margin-top: 12px; max-width: 280px;
+    }
+    .footer-brand .socials { display: flex; gap: 10px; margin-top: 18px; }
+    .social-icon {
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; transition: background .2s;
+    }
+    .social-icon:hover { background: rgba(255,255,255,0.13); }
+    .social-icon svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.5); }
+    .footer-col h5 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.10em;
+      text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 9px; }
+    .footer-col ul li a {
+      font-size: 13.5px; color: rgba(255,255,255,0.48);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom {
+      max-width: 1100px; margin: 22px auto 0;
+      font-size: 12px; color: rgba(255,255,255,0.22); text-align: center;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 60px 20px; }
+      .about, .methodology, .contact-section { grid-template-columns: 1fr; gap: 40px; padding: 56px 20px; }
+      .areas-section, .portfolio-section { padding: 56px 20px; }
+      .areas-grid { grid-template-columns: 1fr; }
+      .cta-band { padding: 56px 20px; }
+      .cta-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      footer { padding: 40px 20px 24px; }
+      .case-card { grid-template-columns: 1fr; }
+      .case-visual { min-height: 120px; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="assets/logo-dark.svg" alt="AD Ingeniería" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="/nosotros/">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="/proyectos/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="btn-primary">Solicitar Evaluación</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-breadcrumb">AD Ingeniería | Ingeniería y Tecnología en Chile</p>
+    <h1>Ingeniería y Tecnología para Soluciones que Escalan</h1>
+    <p>Desarrollamos, diseñamos e implementamos soluciones de ingeniería en seguridad electrónica, infraestructura tecnológica, automatización y redes.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Solicitar Evaluación</a>
+      <a href="#servicios" class="btn-outline">Conocer Servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT — blanco ─── -->
+<section id="servicios" style="background:var(--white);">
+  <div class="about">
+    <div class="about-text">
+      <h2>Ingeniería Aplicada a Soluciones Reales</h2>
+      <p>En AD Ingeniería nos especializamos en el diseño, desarrollo e implementación de soluciones tecnológicas integrales. Entendemos que cada desafío requiere una mirada única, por lo que adaptamos nuestra ingeniería a las necesidades específicas de cada cliente.</p>
+      <p>Nuestro enfoque abarca desde la integración de sistemas de seguridad complejos y la automatización de procesos, hasta el despliegue de infraestructura tecnológica robusta y soluciones digitales a medida.</p>
+      <p>Trabajamos para asegurar que la tecnología sea un habilitador estratégico, garantizando continuidad operativa, eficiencia y escalabilidad en cada proyecto que emprendemos.</p>
+    </div>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=700&q=80" alt="Ingeniería en acción" />
+      <div class="quality-badge">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+        </div>
+        <div>
+          <div>Calidad Garantizada</div>
+          <div class="quality-sub">Estándares de Ingeniería</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICIOS — bg-soft ─── -->
+<section class="areas-section">
+  <div class="areas-header">
+    <h2>Áreas de Solución</h2>
+    <p>Proyectos integrales que abordan las principales necesidades tecnológicas de la industria actual.</p>
+  </div>
+  <div class="areas-grid">
+
+    <a href="/servicios/seguridad-electronica/" class="area-card">
+      <div class="area-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Seguridad Electrónica</h3>
+      <p>Diseño e integración de proyectos de seguridad: CCTV multimarca, VMS avanzado, centralización de monitoreo, control de acceso y redes de incendio.</p>
+      <div class="area-tags">
+        <span class="area-tag">Hik Central</span>
+        <span class="area-tag">Softguard</span>
+        <span class="area-tag">CCTV Industrial</span>
+        <span class="area-tag">Control de Acceso</span>
+      </div>
+    </a>
+
+    <a href="/servicios/transformacion-digital/" class="area-card">
+      <div class="area-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Automatización y Transformación Digital</h3>
+      <p>Digitalización de procesos de negocio con plataformas personalizadas. Desarrollo experto en Power Apps, Power Automate y aplicaciones web y móvil a medida.</p>
+      <div class="area-tags">
+        <span class="area-tag">Power Apps</span>
+        <span class="area-tag">Power Automate</span>
+        <span class="area-tag">Apps a Medida</span>
+      </div>
+    </a>
+
+    <a href="/servicios/redes-infraestructura/" class="area-card">
+      <div class="area-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3>Telecomunicaciones e Infraestructura</h3>
+      <p>Diseño, canalización e implementación de redes corporativas con cableado estructurado certificado y tecnología Ubiquiti Wireless para entornos de alta exigencia.</p>
+      <div class="area-tags">
+        <span class="area-tag">Ubiquiti Certificado</span>
+        <span class="area-tag">Cableado Estructurado</span>
+        <span class="area-tag">LAN/WAN</span>
+      </div>
+    </a>
+    
+    <a href="/servicios/electroinica-iot/" class="area-card">
+      <div class="area-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <h3>Electrónica e IoT</h3>
+      <p>Digitalización de equipos analógicos que aún funcionan, pero no registrasn datos ni se administranvia red, automatización física y desarrollo de soluciones embebidas a medida.</p>
+      <div class="area-tags">
+        <span class="area-tag">Diseño electrónico</span>
+        <span class="area-tag">Transformación analógico a digital</span>
+      </div>
+    </a>
+
+    <a href="/servicios/seguridad-fisica/" class="area-card">
+      <div class="area-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <h3>Seguridad Física y Perimetral</h3>
+      <p>Instalación de barreras físicas para hogares y locales comerciales: cortinas de aluminio y cercos eléctricos. Incluye asesoría previa para determinar la mejor solución.</p>
+      <div class="area-tags">
+        <span class="area-tag">Cortinas de Aluminio</span>
+        <span class="area-tag">Cercos Eléctricos</span>
+      </div>
+    </a>
+
+  </div>
+     <div class="areas-cta">
+      <a href="/servicios/" class="btn-primary">Ver todos los servicios</a>
+    </div>
+</section>
+
+<!-- ─── METODOLOGÍA — blanco ─── -->
+<section style="background:var(--white);padding:80px 0;" id="metodologia">
+  <div class="methodology">
+    <div class="methodology-intro">
+      <h2>Metodología de Trabajo</h2>
+      <p>Cada proyecto es abordado desde una perspectiva integral, considerando el diseño, implementación y proyección futura de la solución.</p>
+      <a href="#contacto" class="btn-sm">Iniciar proyecto</a>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Levantamiento técnico</h4>
+          <p>Análisis detallado de requerimientos y condiciones actuales del cliente para entender el contexto completo del proyecto.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Diseño de arquitectura</h4>
+          <p>Elaboración de la solución técnica, selección de tecnologías y definición de la arquitectura del sistema a implementar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Implementación y desarrollo</h4>
+          <p>Ejecución del proyecto con metodologías ágiles, asegurando calidad en cada fase del desarrollo e implementación.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h4>Soporte y escalabilidad</h4>
+          <p>Acompañamiento post-implementación, monitoreo continuo y planificación de crecimiento y evolución de la solución.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BAND — navy ─── -->
+<section class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-block">
+      <h2>Soluciones Pensadas para Escalar</h2>
+      <p>Las soluciones desarrolladas por AD Ingeniería están diseñadas para crecer junto a las necesidades del cliente, permitiendo su replicación y evolución en el tiempo sin comprometer la estabilidad operativa.</p>
+    </div>
+    <div class="cta-block">
+      <h2>Tecnología al Servicio de la Ingeniería</h2>
+      <p>Utilizamos herramientas y plataformas modernas para desarrollar soluciones eficientes, confiables y adaptables a distintos entornos, asegurando que la inversión tecnológica genere valor real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PORTAFOLIO — bg-mid ─── -->
+<section class="portfolio-section" id="proyectos">
+  <div class="portfolio-inner">
+    <span class="section-label-sm">Portafolio de Proyectos</span>
+    <h2>Caso de Éxito Destacado</h2>
+    <div class="case-card">
+      <div class="case-content">
+        <span class="case-badge">Infraestructura Crítica · Ferroviario</span>
+        <h3>Implementación de Monitoreo Remoto para Estaciones Ferroviarias</h3>
+        <p>Diseño e implementación de un sistema integral de monitoreo remoto con CCTV centralizado, gestión VMS mediante Hik Central y conectividad de red de alta disponibilidad para múltiples estaciones distribuidas.</p>
+      </div>
+      <div class="case-visual">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><circle cx="12" cy="14" r="2"/></svg>
+      </div>
+    </div>
+    <a href="/proyectos/" class="portfolio-link">
+      Ver todos los proyectos
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ─── CONTACTO — blanco ─── -->
+<section id="contacto" style="background:var(--white);">
+  <div class="contact-section">
+    <div class="contact-info">
+      <h2>Contáctanos</h2>
+      <p>Si necesitas desarrollar una solución tecnológica o evaluar un proyecto, contáctanos. Nuestro equipo de ingenieros está listo para analizar tus requerimientos.</p>
+      <div class="contact-card">
+        <h4>Información Directa</h4>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:contacto@adingenieria.cl">contacto@adingenieria.cl</a>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Santiago, Chile
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>Servicios disponibles</h4>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Seguridad Electrónica
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Automatización y Power Apps
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Telecomunicaciones e Infraestructura
+        </div>
+        <div class="contact-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Electrónica e IoT
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Seguridad Física y Perimetral
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="contact-form">
+      <form id="contactForm" novalidate>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div class="form-group">
+            <label for="f-nombre">Nombre completo <span style="color:#e53e3e">*</span></label>
+            <input type="text" id="f-nombre" name="nombre" placeholder="Ej. Juan Pérez" autocomplete="name" />
+            <span class="field-error" id="err-nombre"></span>
+          </div>
+          <div class="form-group">
+            <label for="f-telefono">Teléfono <span style="color:var(--muted);font-weight:400">(opcional)</span></label>
+            <input type="tel" id="f-telefono" name="telefono" placeholder="+56 9 1234 5678" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="f-email">Correo electrónico <span style="color:#e53e3e">*</span></label>
+          <input type="email" id="f-email" name="email" placeholder="ejemplo@empresa.com" autocomplete="email" />
+          <span class="field-error" id="err-email"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="f-servicio">Servicio de interés <span style="color:var(--muted);font-weight:400">(opcional)</span></label>
+          <select id="f-servicio" name="servicio">
+            <option value="">— Selecciona una opción —</option>
+            <option value="Seguridad Electrónica">Seguridad Electrónica</option>
+            <option value="Automatización y Power Apps">Automatización y transformacion digitals</option>
+            <option value="Telecomunicaciones e Infraestructura">Telecomunicaciones e Infraestructura</option>
+            <option value="Electrónica e IoT">Electrónica e IoT</option>
+            <option value="Seguridad Física y Perimetral">Seguridad Física y Perimetral</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="f-mensaje">Mensaje <span style="color:#e53e3e">*</span></label>
+          <textarea id="f-mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto o requerimiento..."></textarea>
+          <span class="field-error" id="err-mensaje"></span>
+        </div>
+
+        <!-- Cloudflare Turnstile -->
+        <div class="cf-turnstile"
+             data-sitekey="0x4AAAAAACyk_yHWKIgXub_S"
+             data-theme="light"
+             style="margin-bottom:16px;"></div>
+
+        <button class="btn-submit" type="submit" id="btnSubmit">
+          <span id="btnText">Enviar mensaje</span>
+          <svg id="btnIcon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+          <svg id="btnSpinner" width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="white" stroke-width="2.5" stroke-linecap="round"
+               style="display:none;animation:spin .8s linear infinite">
+            <path d="M12 2a10 10 0 0 1 10 10"/>
+          </svg>
+        </button>
+
+        <div id="formStatus" style="display:none;margin-top:12px;padding:12px 16px;border-radius:8px;font-size:13.5px;font-weight:500;text-align:center;"></div>
+        <p class="form-note">Al enviar, aceptas nuestra política de privacidad.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER — navy oscuro ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo">
+        <img src="assets/logo-dark.svg" alt="AD Ingeniería" style="height:22px;object-fit:contain;filter:brightness(0) invert(1);" />
+      </a>
+      <p>Soluciones de Ingeniería y Tecnología. Desarrollamos e implementamos soluciones orientadas a la integración de sistemas, automatización y optimización de procesos.</p>
+      <div class="socials">
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="/nosotros/">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="/proyectos/">Proyectos</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col"><h5>Servicios</h5><ul>
+        <li><a href="/servicios/seguridad-electronica/">Seguridad Electrónica</a></li>
+        <li><a href="/servicios/transformacion-digital/">Transformación Digital</a></li>
+        <li><a href="/servicios/redes-infraestructura/">Redes e Infraestructura</a></li>
+        <li><a href="/servicios/electronica-iot/">Electrónica e IoT</a></li>
+        <li><a href="/servicios/seguridad-fisica/">Seguridad Física</a></li>
+        </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="mailto:contacto@adingenieria.cl">contacto@adingenieria.cl</a></li>
+        <li><a href="#">Santiago, Chile</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 AD Ingeniería. Todos los derechos reservados.
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  var form       = document.getElementById('contactForm');
+  var btnSubmit  = document.getElementById('btnSubmit');
+  var btnText    = document.getElementById('btnText');
+  var btnIcon    = document.getElementById('btnIcon');
+  var btnSpinner = document.getElementById('btnSpinner');
+  var formStatus = document.getElementById('formStatus');
+
+  function setError(fieldId, errId, msg) {
+    var field = document.getElementById(fieldId);
+    var errEl = document.getElementById(errId);
+    if (msg) { field.classList.add('error'); errEl.textContent = msg; }
+    else      { field.classList.remove('error'); errEl.textContent = ''; }
+  }
+
+  function validate() {
+    var nombre  = document.getElementById('f-nombre').value.trim();
+    var email   = document.getElementById('f-email').value.trim();
+    var mensaje = document.getElementById('f-mensaje').value.trim();
+    setError('f-nombre',  'err-nombre',  nombre === '' ? 'El nombre es obligatorio.' : '');
+    setError('f-email',   'err-email',   !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? 'Ingresa un correo válido.' : '');
+    setError('f-mensaje', 'err-mensaje', mensaje.length < 10 ? 'El mensaje debe tener al menos 10 caracteres.' : '');
+    return nombre !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && mensaje.length >= 10;
+  }
+
+  function setLoading(loading) {
+    btnSubmit.disabled       = loading;
+    btnText.textContent      = loading ? 'Enviando...' : 'Enviar mensaje';
+    btnIcon.style.display    = loading ? 'none'  : 'block';
+    btnSpinner.style.display = loading ? 'block' : 'none';
+  }
+
+  function showStatus(ok, msg) {
+    formStatus.style.display    = 'block';
+    formStatus.textContent      = msg;
+    formStatus.style.background = ok ? '#f0fdf4' : '#fff5f5';
+    formStatus.style.color      = ok ? '#166534' : '#9b2c2c';
+    formStatus.style.border     = ok ? '1px solid #bbf7d0' : '1px solid #fed7d7';
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (!validate()) return;
+    var tsToken = document.querySelector('[name="cf-turnstile-response"]');
+    if (!tsToken || !tsToken.value) {
+      showStatus(false, 'Por favor completa el captcha antes de enviar.');
+      return;
+    }
+    setLoading(true);
+    formStatus.style.display = 'none';
+    try {
+      var data = new FormData(form);
+      var res  = await fetch('contact.php', { method: 'POST', body: data });
+      var json = await res.json();
+      if (json.success) {
+        showStatus(true, json.message || '¡Mensaje enviado! Te contactaremos pronto.');
+        form.reset();
+        if (window.turnstile) { turnstile.reset(); }
+      } else {
+        showStatus(false, json.message || 'Error al enviar. Inténtalo nuevamente.');
+      }
+    } catch (err) {
+      showStatus(false, 'Error de conexión. Verifica tu internet e inténtalo nuevamente.');
+    } finally {
+      setLoading(false);
+    }
+  });
+</script>
+
+</body>
+</html>

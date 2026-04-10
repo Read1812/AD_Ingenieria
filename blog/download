@@ -1,0 +1,17 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /blog/
+
+    # Servir index.php en lugar de index.html
+    RewriteRule ^$ index.php [L]
+
+    # Si el archivo o directorio existe físicamente, servirlo directo
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # /blog/nombre-del-articulo/ → post.php?slug=nombre-del-articulo
+    RewriteRule ^([a-z0-9-]+)/?$ post.php?slug=$1 [L,QSA]
+</IfModule>

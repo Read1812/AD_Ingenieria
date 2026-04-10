@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-simple.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redes Corporativas e Infraestructura de Telecomunicaciones en Chile | AD Ingeniería</title>
+  <meta name="description" content="Diseño e instalación de redes Wi-Fi corporativas con Ubiquiti UniFi, cableado estructurado categoría 6, segmentación VLAN y monitoreo de red para empresas en Santiago, Chile." />
+  <meta name="keywords" content="redes corporativas Chile, Ubiquiti UniFi Chile, cableado estructurado Santiago, WiFi empresarial Chile, VLAN segmentación, infraestructura redes empresas, fibra óptica Chile, switching managed, VPN empresas Chile" />
+  <link rel="canonical" href="https://adingenieria.cl/servicios/redes-infraestructura/" />
+  <meta property="og:title" content="Redes Corporativas e Infraestructura de Telecomunicaciones | AD Ingeniería Chile" />
+  <meta property="og:description" content="Diseño e instalación de redes Wi-Fi Ubiquiti, cableado estructurado Cat6 y arquitecturas VLAN para empresas en Chile." />
+  <meta property="og:type" content="website" /><meta property="og:url" content="https://adingenieria.cl/servicios/redes-infraestructura/" />
+  <meta property="og:image" content="https://adingenieria.cl/assets/servicios/redes-infraestructura/og-cover.png" />
+  <meta property="og:locale" content="es_CL" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Redes Corporativas e Infraestructura de Telecomunicaciones","description":"Diseño, instalación y mantenimiento de redes Wi-Fi Ubiquiti, cableado estructurado, VLANs y conectividad WAN para empresas en Chile.","provider":{"@type":"Organization","name":"AD Ingeniería","url":"https://adingenieria.cl"},"areaServed":"CL","serviceType":"Telecomunicaciones y Redes","url":"https://adingenieria.cl/servicios/redes-infraestructura/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://adingenieria.cl/"},{"@type":"ListItem","position":2,"name":"Servicios","item":"https://adingenieria.cl/servicios/"},{"@type":"ListItem","position":3,"name":"Redes e Infraestructura","item":"https://adingenieria.cl/servicios/redes-infraestructura/"}]}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#1a3bcc;--blue-dark:#1530a8;--navy:#0d1b3e;--navy-deep:#08122b;--text:#1a1a2e;--muted:#5a6073;--bg-soft:#f4f6fb;--bg-mid:#eef1f9;--border:#e2e6f0;--white:#ffffff; }
+    body { font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6; }
+    nav { position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px; }
+    .nav-logo img { height:40px; } .nav-links { display:flex;gap:28px;list-style:none; }
+    .nav-links a { font-size:13.5px;color:var(--text);text-decoration:none;font-weight:500;opacity:.8;transition:opacity .2s; }
+    .nav-links a:hover,.nav-links a[aria-current="page"] { opacity:1;color:var(--blue); }
+    .btn-primary { background:var(--blue);color:var(--white);border:none;padding:9px 20px;border-radius:6px;font-size:13.5px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s; }
+    .btn-primary:hover { background:var(--blue-dark); }
+    .btn-outline { background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.7);padding:9px 20px;border-radius:6px;font-size:13.5px;font-weight:600;text-decoration:none;transition:all .2s; }
+    .btn-outline:hover { background:rgba(255,255,255,.12); }
+    .btn-sm { display:inline-block;background:transparent;color:var(--text);border:1.5px solid var(--border);padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s; }
+    .btn-sm:hover { border-color:var(--blue);color:var(--blue); }
+    .hero { position:relative;min-height:420px;display:flex;align-items:center;background:var(--navy-deep);overflow:hidden; }
+    .hero-bg { position:absolute;inset:0;background:url('/assets/servicios/redes-infraestructura/portada.png') center/cover no-repeat;opacity:.45;filter:contrast(1.1) brightness(.9); }
+    .hero-overlay { position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,18,43,.70) 0%,rgba(13,27,62,.3) 70%,transparent 100%); }
+    .hero-content { position:relative;z-index:2;max-width:620px;padding:80px 48px; }
+    .breadcrumb { font-size:12px;color:rgba(255,255,255,.45);margin-bottom:16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap; }
+    .breadcrumb a { color:rgba(255,255,255,.45);text-decoration:none; } .breadcrumb a:hover { color:rgba(255,255,255,.8); }
+    .hero h1 { font-size:clamp(26px,3.5vw,40px);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:18px; }
+    .hero p { font-size:15px;color:rgba(255,255,255,.70);margin-bottom:30px;line-height:1.7;max-width:500px; }
+    .hero-actions { display:flex;gap:12px;flex-wrap:wrap; }
+    .service-label { display:inline-block;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#38bdf8;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.25);padding:4px 12px;border-radius:100px;margin-bottom:16px; }
+    .section-tag { display:inline-block;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);background:rgba(26,59,204,.07);border:1px solid rgba(26,59,204,.14);padding:4px 12px;border-radius:100px;margin-bottom:14px; }
+    .checklist { list-style:none;display:flex;flex-direction:column;gap:10px; }
+    .checklist li { display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);line-height:1.5; }
+    .checklist li svg { width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2.5;flex-shrink:0;margin-top:2px; }
+    .main-image-section { background:var(--bg-soft);padding:56px 48px; }
+    .main-image-wrap { max-width:1100px;margin:0 auto; }
+    .main-image-wrap figure { border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 32px rgba(0,0,0,.08); }
+    .main-image-wrap img { width:100%;display:block;aspect-ratio:16/6;object-fit:cover; }
+    .img-placeholder { width:100%;aspect-ratio:16/6;background:linear-gradient(135deg,var(--navy) 0%,#1a3bcc 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px; }
+    .img-placeholder svg { width:48px;height:48px;stroke:rgba(255,255,255,.25);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round; }
+    .img-placeholder span { font-size:12px;color:rgba(255,255,255,.25);font-weight:500; }
+    .main-image-wrap figcaption { padding:12px 20px;font-size:12.5px;color:var(--muted);background:var(--white); }
+    .secondary-image { max-width:1100px;margin:0 auto;padding:10 48px 64px; }
+    .secondary-image figure { border-radius:14px;overflow:hidden;border:1px solid var(--border); }
+    .secondary-image img { width:100%;display:block;aspect-ratio:16/5;object-fit:cover; }
+    .img-placeholder-sm { width:100%;aspect-ratio:16/5;background:linear-gradient(135deg,#112466 0%,var(--blue) 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px; }
+    .img-placeholder-sm svg { width:36px;height:36px;stroke:rgba(255,255,255,.2);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round; }
+    .img-placeholder-sm span { font-size:12px;color:rgba(255,255,255,.2);font-weight:500; }
+    .secondary-image figcaption { padding:10px 18px;font-size:12px;color:var(--muted);background:var(--white); }
+    .overview { padding:72px 48px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:start; }
+    .overview h2 { font-size:26px;font-weight:800;margin-bottom:16px;line-height:1.25; }
+    .overview p { font-size:14.5px;color:var(--muted);line-height:1.75;margin-bottom:14px; }
+    .platforms-section { background:var(--bg-soft);padding:80px 48px; }
+    .platforms-inner { max-width:1100px;margin:0 auto; }
+    .platforms-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px; }
+    .platform-card { background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:box-shadow .2s,transform .2s; }
+    .platform-card:hover { box-shadow:0 8px 28px rgba(26,59,204,.09);transform:translateY(-3px); }
+    .p-icon { width:44px;height:44px;background:var(--bg-soft);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid var(--border); }
+    .p-icon svg { width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
+    .platform-card h3 { font-size:16px;font-weight:700;margin-bottom:8px; }
+    .platform-card p { font-size:13.5px;color:var(--muted);line-height:1.65; }
+    .detail-section { padding:80px 48px; }
+    .detail-inner { max-width:1100px;margin:0 auto; }
+    .detail-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px; }
+    .detail-card { background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:box-shadow .2s,transform .2s; }
+    .detail-card:hover { box-shadow:0 8px 28px rgba(26,59,204,.09);transform:translateY(-3px); }
+    .detail-icon { width:44px;height:44px;background:var(--bg-soft);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid var(--border); }
+    .detail-icon svg { width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
+    .detail-card h3 { font-size:16px;font-weight:700;margin-bottom:8px; }
+    .detail-card p { font-size:13.5px;color:var(--muted);line-height:1.65; }
+    .detail-tags { display:flex;flex-wrap:wrap;gap:6px;margin-top:12px; }
+    .detail-tag { font-size:11px;font-weight:600;padding:3px 9px;border-radius:100px;background:var(--bg-soft);border:1px solid var(--border);color:var(--muted); }
+    .process-section { background:var(--bg-soft);padding:80px 48px; }
+    .process-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start; }
+    .process-intro h2 { font-size:26px;font-weight:800;margin-bottom:14px;line-height:1.25; }
+    .process-intro p { font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px; }
+    .steps { display:flex;flex-direction:column; }
+    .step { display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:1px solid var(--border); }
+    .step:last-child { border-bottom:none; }
+    .step-num { width:36px;height:36px;border:2px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--muted);flex-shrink:0;margin-top:2px;transition:all .2s; }
+    .step:hover .step-num { border-color:var(--blue);color:var(--blue); }
+    .step-content h4 { font-size:15px;font-weight:700;margin-bottom:4px; }
+    .step-content p { font-size:13.5px;color:var(--muted);line-height:1.6; }
+    .usecases-section { padding:72px 48px;max-width:1100px;margin:0 auto; }
+    .usecases-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px; }
+    .usecase-card { background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:24px 22px; }
+    .usecase-card .uc-num { font-size:11px;font-weight:800;letter-spacing:.10em;color:var(--blue);margin-bottom:10px; }
+    .usecase-card h4 { font-size:14.5px;font-weight:700;margin-bottom:8px; }
+    .usecase-card p { font-size:13px;color:var(--muted);line-height:1.65; }
+    .cta-band { background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,#112466 100%);padding:72px 48px;position:relative;overflow:hidden; }
+    .cta-band::before { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 90% 50%,rgba(26,59,204,.22) 0%,transparent 70%); }
+    .cta-inner { max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center; }
+    .cta-text h2 { font-size:24px;font-weight:800;color:var(--white);margin-bottom:14px;line-height:1.3; }
+    .cta-text p { font-size:14.5px;color:rgba(255,255,255,.68);line-height:1.7; }
+    .cta-actions { display:flex;flex-direction:column;gap:10px;align-items:flex-start; }
+    .cta-note { font-size:12px;color:rgba(255,255,255,.35); }
+    .related-section { background:var(--white);padding:80px 48px; }
+    .related-inner { max-width:1100px;margin:0 auto; }
+    .related-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:36px; }
+    .related-card { background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:24px;text-decoration:none;color:inherit;transition:all .2s;display:block; }
+    .related-card:hover { box-shadow:0 6px 24px rgba(26,59,204,.09);transform:translateY(-2px);border-color:rgba(26,59,204,.2); }
+    .related-card .r-tag { font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:8px; }
+    .related-card h4 { font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.3; }
+    .related-card p { font-size:13px;color:var(--muted);line-height:1.6; }
+    footer { background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);padding:52px 48px 28px; }
+    .footer-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08); }
+    .footer-brand img { height:70px;margin-bottom:12px; }
+    .footer-brand p { font-size:13px;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px; }
+    .footer-col h5 { font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px; }
+    .footer-col ul { list-style:none; } .footer-col ul li { margin-bottom:9px; }
+    .footer-col ul li a { font-size:13.5px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s; }
+    .footer-col ul li a:hover { color:rgba(255,255,255,.9); }
+    .footer-bottom { max-width:1100px;margin:22px auto 0;font-size:12px;color:rgba(255,255,255,.20);text-align:center; }
+    @media (max-width:900px) {
+      nav { padding:0 20px; } .nav-links { display:none; } .hero-content { padding:60px 20px; }
+      .main-image-section,.platforms-section,.usecases-section,.related-section,.detail-section,.process-section { padding-left:20px;padding-right:20px; }
+      .secondary-image { padding:0 20px 48px; }
+      .overview,.process-inner { grid-template-columns:1fr;gap:36px;padding:52px 20px; }
+      .platforms-grid,.usecases-grid,.detail-grid { grid-template-columns:1fr; }
+      .related-grid { grid-template-columns:repeat(2,1fr); }
+      .cta-band { padding:56px 20px; } .cta-inner { grid-template-columns:1fr;gap:28px; }
+      .footer-inner { grid-template-columns:1fr 1fr;gap:28px; } footer { padding:40px 20px 24px; }
+    }
+    @media (max-width:480px) { .footer-inner,.related-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" style="text-decoration:none;"><img src="/assets/logo-dark.svg" alt="AD Ingeniería" height="35"></a>
+  <ul class="nav-links"><li><a href="/">Inicio</a></li><li><a href="/nosotros/">Nosotros</a></li><li><a href="/servicios/" aria-current="page">Servicios</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/blog/">Blog</a></li></ul>
+  <a href="/#contacto" class="btn-primary">Contacto</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="service-label">Telecomunicaciones y Redes</span>
+    <h1>Redes Corporativas e Infraestructura de Telecomunicaciones</h1>
+    <p>Diseñamos, instalamos y mantenemos redes Wi-Fi corporativas, cableado estructurado certificado y arquitecturas segmentadas para empresas que necesitan conectividad confiable y segura.</p>
+    <div class="hero-actions"><a href="/#contacto" class="btn-primary">Solicitar evaluación</a><a href="/proyectos/" class="btn-outline">Ver proyectos</a></div>
+  </div>
+</section>
+
+<section class="overview" aria-labelledby="overview-heading">
+  <div>
+    <span class="section-tag">¿Qué resolvemos?</span>
+    <h2 id="overview-heading">Una red mal diseñada cuesta más que una bien hecha</h2>
+    <p>El problema de conectividad en una empresa raramente es la velocidad del internet contratado. Casi siempre está en la infraestructura interna: puntos de acceso mal ubicados, switches sin gestión, tráfico sin segmentar o cableado que nadie documentó cuando lo instalaron.</p>
+    <p>Como instaladores <strong>certificados Ubiquiti</strong>, diseñamos redes Wi-Fi de alta densidad para oficinas, plantas y edificios corporativos. Complementamos con cableado estructurado categoría 6 y 6A, fibra óptica backbone y arquitecturas VLAN que aíslan el tráfico según función.</p>
+    <p>Cada proyecto incluye documentación técnica completa de la instalación: topología, direccionamiento, VLANs y contraseñas. Porque la red que nadie documentó es la red que nadie puede mantener.</p>
+  </div>
+  <ul class="checklist">
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Wi-Fi corporativo de alta densidad con Ubiquiti UniFi AP</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Cableado estructurado certificado categoría 6 y 6A</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Diseño y ejecución de backbone de fibra óptica</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Segmentación por VLAN: operación, seguridad, IoT e invitados</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Instalación y configuración de switches managed Ubiquiti</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Configuración de VPN site-to-site y acceso remoto seguro</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Monitoreo de red con Ubiquiti Network Controller</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Documentación técnica completa de la infraestructura instalada</li>
+  </ul>
+</section>
+
+<div class="main-image-section"><div class="main-image-wrap">
+  <figure>
+    <img src="/assets/servicios/redes-infraestructura/rack-cableado.png" alt="Rack de telecomunicaciones con cableado estructurado Cat6 instalado" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><svg viewBox=\'0 0 24 24\'><rect x=\'2\' y=\'2\' width=\'6\' height=\'6\' rx=\'1\'/><rect x=\'16\' y=\'2\' width=\'6\' height=\'6\' rx=\'1\'/><rect x=\'9\' y=\'16\' width=\'6\' height=\'6\' rx=\'1\'/><line x1=\'5\' y1=\'8\' x2=\'5\' y2=\'14\'/><line x1=\'19\' y1=\'8\' x2=\'19\' y2=\'14\'/><line x1=\'5\' y1=\'14\' x2=\'12\' y2=\'19\'/><line x1=\'19\' y1=\'14\' x2=\'12\' y2=\'19\'/></svg><span>assets/servicios/redes-infraestructura/rack-cableado.png</span></div>'">
+  </figure>
+</div></div>
+
+<section class="platforms-section" aria-labelledby="platforms-heading">
+  <div class="platforms-inner">
+    <span class="section-tag">Plataformas y tecnología</span>
+    <h2 id="platforms-heading">Infraestructura diseñada por capas</h2>
+    <p style="font-size:14.5px;color:var(--muted);max-width:600px;line-height:1.7;margin-top:8px;">Una red corporativa robusta requiere trabajo en tres capas coordinadas. Diseñamos e implementamos todas ellas.</p>
+    <div class="platforms-grid">
+      <div class="platform-card"><div class="p-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><h3>Capa física</h3><p>Cableado estructurado Cat6/6A certificado, bandeja de fibra óptica, racks de telecomunicaciones y patch panels etiquetados. Base sobre la que todo lo demás funciona.</p></div>
+      <div class="platform-card"><div class="p-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><line x1="5" y1="8" x2="5" y2="14"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="5" y1="14" x2="12" y2="19"/><line x1="19" y1="14" x2="12" y2="19"/></svg></div><h3>Capa de red</h3><p>Switches managed con VLANs, QoS y políticas de acceso. Separación de tráfico por función para mayor seguridad y rendimiento. Enrutamiento y firewall configurado.</p></div>
+      <div class="platform-card"><div class="p-icon"><svg viewBox="0 0 24 24"><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div><h3>Capa inalámbrica</h3><p>Access Points Ubiquiti UniFi con cobertura planificada por heatmap, itinerancia transparente y SSIDs segmentados por VLAN para cada tipo de usuario.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="secondary-image"><figure>
+  <img src="/assets/servicios/redes-infraestructura/cableado-detalle.png" alt="Detalle de cableado estructurado categoría 6 etiquetado en patch panel" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder-sm\'><svg viewBox=\'0 0 24 24\'><path d=\'M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z\'/></svg><span>assets/servicios/redes-infraestructura/cableado-detalle.png</span></div>'">
+</figure></div>
+
+<section class="detail-section" style="background:var(--bg-soft);">
+  <div class="detail-inner">
+    <span class="section-tag">Soluciones</span>
+    <h2>Qué incluye este servicio</h2>
+    <div class="detail-grid">
+      <div class="detail-card"><div class="detail-icon"><svg viewBox="0 0 24 24"><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div><h3>Wi-Fi Corporativo Ubiquiti</h3><p>Diseño de cobertura por heatmap, instalación de APs UniFi y configuración de SSIDs con VLAN segmentada. Itinerancia transparente entre puntos de acceso.</p><div class="detail-tags"><span class="detail-tag">UniFi AP</span><span class="detail-tag">Alta Densidad</span><span class="detail-tag">Heatmap</span></div></div>
+      <div class="detail-card"><div class="detail-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><h3>Cableado Estructurado</h3><p>Instalación y certificación de cableado Cat6 y Cat6A con patch panels etiquetados, rack organizado y documentación de cada punto de red.</p><div class="detail-tags"><span class="detail-tag">Cat6 / Cat6A</span><span class="detail-tag">Certificado</span><span class="detail-tag">Documentado</span></div></div>
+      <div class="detail-card"><div class="detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3>Fibra Óptica Backbone</h3><p>Tendido de fibra óptica monomodo y multimodo para backbone entre pisos y edificios. Fusión de fibra, patch panels ópticos y certificación del enlace.</p><div class="detail-tags"><span class="detail-tag">Monomodo / Multimodo</span><span class="detail-tag">Fusión</span><span class="detail-tag">Certificación OTDR</span></div></div>
+      <div class="detail-card"><div class="detail-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><line x1="5" y1="8" x2="5" y2="14"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="5" y1="14" x2="12" y2="19"/><line x1="19" y1="14" x2="12" y2="19"/></svg></div><h3>Switching y VLANs</h3><p>Configuración de switches managed Ubiquiti con VLANs por función, QoS para tráfico de voz y seguridad IP. Segmentación que protege la red corporativa.</p><div class="detail-tags"><span class="detail-tag">UniFi Switches</span><span class="detail-tag">VLAN</span><span class="detail-tag">QoS</span></div></div>
+      <div class="detail-card"><div class="detail-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></div><h3>VPN y Acceso Remoto</h3><p>Configuración de VPN site-to-site entre sucursales y acceso remoto seguro para usuarios móviles. Tunnels IPSec y WireGuard sobre equipos Ubiquiti.</p><div class="detail-tags"><span class="detail-tag">Site-to-Site</span><span class="detail-tag">IPSec</span><span class="detail-tag">WireGuard</span></div></div>
+      <div class="detail-card"><div class="detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div><h3>Monitoreo y Gestión Remota</h3><p>Configuración de Ubiquiti Network Controller para visibilidad centralizada de toda la infraestructura, alertas de fallas y gestión remota de configuraciones.</p><div class="detail-tags"><span class="detail-tag">UniFi Controller</span><span class="detail-tag">Alertas</span><span class="detail-tag">Gestión Remota</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="usecases-section" aria-labelledby="usecases-heading">
+  <span class="section-tag">Sectores y aplicaciones</span>
+  <h2 id="usecases-heading">¿Para qué tipo de instalación?</h2>
+  <p style="font-size:14.5px;color:var(--muted);max-width:580px;line-height:1.7;margin-top:10px;">Diseñamos infraestructuras de red para entornos con distintas exigencias de cobertura, seguridad y escala.</p>
+  <div class="usecases-grid">
+    <div class="usecase-card"><div class="uc-num">OFICINAS</div><h4>Oficinas corporativas</h4><p>Wi-Fi de alta densidad, red cableada para estaciones fijas y VLAN diferenciada para impresoras, teléfonos IP y dispositivos de invitados.</p></div>
+    <div class="usecase-card"><div class="uc-num">INDUSTRIA</div><h4>Plantas industriales</h4><p>Redes robustas para entornos con polvo y temperatura extrema. Cobertura en naves de gran superficie con AP industriales.</p></div>
+    <div class="usecase-card"><div class="uc-num">CONDOMINIOS</div><h4>Edificios residenciales</h4><p>Backbone de fibra óptica por piso, Wi-Fi para áreas comunes y red dedicada para sistemas de seguridad y control de acceso.</p></div>
+    <div class="usecase-card"><div class="uc-num">RETAIL</div><h4>Locales y tiendas</h4><p>Red operativa para punto de venta, Wi-Fi para clientes segmentado del tráfico interno y conectividad para sistemas de seguridad.</p></div>
+    <div class="usecase-card"><div class="uc-num">MULTI-SITIO</div><h4>Empresas multi-sucursal</h4><p>VPN site-to-site entre sedes, gestión centralizada de toda la infraestructura y visibilidad unificada del estado de la red.</p></div>
+    <div class="usecase-card"><div class="uc-num">EXPANSIÓN</div><h4>Proyectos de ampliación</h4><p>Auditoría de infraestructura existente, diseño de expansión compatible y migración sin corte de servicio para el equipo operativo.</p></div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="process-inner">
+    <div class="process-intro">
+      <span class="section-tag">Proceso de Trabajo</span>
+      <h2>Cómo implementamos tu red</h2>
+      <p>Una red bien implementada parte del diseño, no de la instalación. El orden importa para evitar retrabajo costoso.</p>
+      <a href="/#contacto" class="btn-sm" style="margin-top:8px;">Iniciar proyecto</a>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div class="step-content"><h4>Auditoría y levantamiento</h4><p>Revisión de la infraestructura existente, mapeo del espacio, identificación de zonas críticas de cobertura y análisis de los requerimientos de conectividad.</p></div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-content"><h4>Diseño de red</h4><p>Plano de ubicación de APs, topología de switches, diseño de VLANs, plan de direccionamiento IP y especificación de materiales y equipos.</p></div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-content"><h4>Instalación de infraestructura</h4><p>Tendido de cableado, instalación de rack, montaje de equipos activos y pasivos. Trabajamos en horarios coordinados para no interrumpir la operación.</p></div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-content"><h4>Configuración y pruebas</h4><p>Configuración de switches, APs y VLANs. Pruebas de cobertura Wi-Fi, velocidad por punto y conectividad de todos los servicios.</p></div></div>
+      <div class="step"><div class="step-num">05</div><div class="step-content"><h4>Documentación y entrega</h4><p>Entrega de documentación técnica completa: topología, plano de red, listado de equipos, credenciales y guía de administración básica.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band"><div class="cta-inner">
+  <div class="cta-text"><h2>¿Problemas de conectividad o planificando una nueva instalación?</h2><p>Hacemos un diagnóstico de la infraestructura actual y te proponemos el diseño más adecuado — ya sea una instalación nueva o una mejora sobre lo existente.</p></div>
+  <div class="cta-actions"><a href="/#contacto" class="btn-primary">Solicitar evaluación gratuita</a><p class="cta-note">Respuesta en menos de 24 horas hábiles · Sin compromiso</p></div>
+</div></section>
+
+<section class="related-section"><div class="related-inner">
+  <h2 style="font-size:22px;font-weight:800;">Otros servicios relacionados</h2>
+  <div class="related-grid">
+    <a href="/servicios/seguridad-electronica/" class="related-card"><span class="r-tag">Seguridad Electrónica</span><h4>Seguridad Electrónica</h4><p>CCTV y control de acceso IP que necesitan la red como base. Los diseñamos juntos.</p></a>
+    <a href="/servicios/electronica-iot/" class="related-card"><span class="r-tag">Electrónica e IoT</span><h4>Electrónica e IoT</h4><p>Dispositivos IoT y sensores que se conectan a la red corporativa en una VLAN dedicada.</p></a>
+    <a href="/servicios/transformacion-digital/" class="related-card"><span class="r-tag">Automatización</span><h4>Automatización Digital</h4><p>Las apps y flujos digitales requieren conectividad estable. La garantizamos desde la capa física.</p></a>
+    <a href="/servicios/seguridad-fisica/" class="related-card"><span class="r-tag">Seguridad Física</span><h4>Seguridad Física</h4><p>La red que conecta el cerco eléctrico con la central de alarma y el CCTV.</p></a>
+  </div>
+</div></section>
+
+<footer><div class="footer-inner">
+  <div class="footer-brand"><img src="/assets/logo-white.svg" alt="AD Ingeniería"><p>Ingeniería y tecnología B2B en Chile. Redes, seguridad electrónica, automatización e infraestructura.</p></div>
+  <div class="footer-col"><h5>Servicios</h5><ul><li><a href="/servicios/seguridad-electronica/">Seguridad Electrónica</a></li><li><a href="/servicios/transformacion-digital/">Automatización Digital</a></li><li><a href="/servicios/redes-infraestructura/">Redes e Infraestructura</a></li><li><a href="/servicios/seguridad-fisica/">Seguridad Física</a></li><li><a href="/servicios/electronica-iot/">Electrónica e IoT</a></li></ul></div>
+  <div class="footer-col"><h5>Empresa</h5><ul><li><a href="/nosotros/">Nosotros</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+  <div class="footer-col"><h5>Contacto</h5><ul><li><a href="mailto:contacto@adingenieria.cl">contacto@adingenieria.cl</a></li><li><a href="/#contacto">Formulario</a></li><li><a href="https://maps.google.com/?q=Santiago,Chile" rel="noopener">Santiago, Chile</a></li></ul></div>
+</div>
+<p class="footer-bottom">© <span id="yr"></span> AD Ingeniería SpA · Todos los derechos reservados</p>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</footer>
+</body>
+</html>

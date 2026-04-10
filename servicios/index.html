@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-simple.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO primario -->
+  <title>Servicios de Ingeniería y Tecnología en Chile | AD Ingeniería</title>
+  <meta name="description" content="Seguridad electrónica, automatización con Power Apps, redes Ubiquiti, seguridad física perimetral y desarrollo IoT. Soluciones de ingeniería B2B en Santiago, Chile." />
+  <meta name="keywords" content="seguridad electrónica Chile, CCTV Hikvision, Hik Central, Softguard, control de acceso, Power Apps Chile, Power Automate, automatización procesos, redes Ubiquiti, cableado estructurado, cerco eléctrico, persianas aluminio, IoT industrial, ingeniería tecnológica Santiago" />
+  <link rel="canonical" href="https://adingenieria.cl/servicios/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Servicios de Ingeniería y Tecnología | AD Ingeniería" />
+  <meta property="og:description" content="Consultoría especializada en seguridad electrónica, automatización, redes e infraestructura tecnológica en Chile." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adingenieria.cl/servicios/" />
+  <meta property="og:locale" content="es_CL" />
+
+  <!-- Schema.org estructurado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Servicios de Ingeniería y Tecnología",
+    "provider": {
+      "@type": "Organization",
+      "name": "AD Ingeniería",
+      "url": "https://adingenieria.cl",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santiago",
+        "addressCountry": "CL"
+      }
+    },
+    "areaServed": "CL",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Catálogo de Servicios",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seguridad Electrónica", "description": "CCTV, Hik Central, Softguard, control de acceso"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automatización y Digitalización", "description": "Power Apps, Power Automate, desarrollo de aplicaciones"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Telecomunicaciones y Redes", "description": "Ubiquiti, cableado estructurado, infraestructura de red"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seguridad Física y Perimetral", "description": "Persianas de aluminio, cercos eléctricos, control de acceso físico"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Electrónica e IoT", "description": "Modernización de sistemas analógicos, automatización física, ESP32, Modbus, MQTT"}}
+      ]
+    }
+  }
+  </script>
+
+  <!-- BreadcrumbList para Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://adingenieria.cl/"},
+      {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://adingenieria.cl/servicios/"}
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #1a3bcc;
+      --blue-dark:  #1530a8;
+      --blue-light: #2a4de0;
+      --navy:       #0d1b3e;
+      --navy-deep:  #08122b;
+      --text:       #1a1a2e;
+      --muted:      #5a6073;
+      --bg-soft:    #f4f6fb;
+      --bg-mid:     #eef1f9;
+      --border:     #e2e6f0;
+      --white:      #ffffff;
+      --accent:     #38bdf8;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 60px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo img { height: 40px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 13.5px; color: var(--text); text-decoration: none;
+      font-weight: 500; opacity: 0.8; transition: opacity .2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a[aria-current="page"] { opacity: 1; color: var(--blue); }
+    .btn-primary {
+      background: var(--blue); color: var(--white); border: none;
+      padding: 9px 20px; border-radius: 6px; font-size: 13.5px;
+      font-weight: 600; cursor: pointer; text-decoration: none; transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.7);
+      padding: 9px 20px; border-radius: 6px; font-size: 13.5px;
+      font-weight: 600; cursor: pointer; text-decoration: none; transition: all .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; min-height: 460px;
+      display: flex; align-items: center;
+      background: var(--navy-deep); overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('/assets/hero.png') center/cover no-repeat;
+      opacity: 0.35;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(8,18,43,0.65) 0%, rgba(13,27,62,0.3) 60%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 600px; padding: 80px 48px;
+    }
+    .breadcrumb {
+      font-size: 12px; color: rgba(255,255,255,0.5);
+      margin-bottom: 18px; letter-spacing: 0.02em;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+    .breadcrumb span { opacity: 0.4; }
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+      color: var(--white); line-height: 1.15; margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 15.5px; color: rgba(255,255,255,0.72);
+      margin-bottom: 32px; line-height: 1.7; max-width: 500px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ─── INTRO ─── */
+    .intro {
+      padding: 72px 48px; max-width: 1100px; margin: 0 auto;
+    }
+    .intro-grid {
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: center;
+    }
+    .intro h2 {
+      font-size: 26px; font-weight: 800; color: var(--text);
+      margin-bottom: 16px; line-height: 1.25;
+    }
+    .intro p {
+      font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 14px;
+    }
+    .intro-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+    .stat-box {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px 20px;
+    }
+    .stat-num {
+      font-size: 32px; font-weight: 800; color: var(--blue); line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
+
+    /* ─── SERVICIOS SECTION ─── */
+    .services-section {
+      background: var(--bg-soft);
+      padding: 80px 48px;
+    }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-tag {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue);
+      background: rgba(26,59,204,0.07); border: 1px solid rgba(26,59,204,0.15);
+      padding: 4px 12px; border-radius: 100px; margin-bottom: 14px;
+    }
+    .section-header h2 {
+      font-size: 30px; font-weight: 800; color: var(--text);
+      margin-bottom: 12px; line-height: 1.2;
+    }
+    .section-header p {
+      font-size: 15px; color: var(--muted); max-width: 520px;
+      margin: 0 auto; line-height: 1.7;
+    }
+    .services-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+    }
+    .service-card.full-width {
+      grid-column: 1 / -1;
+    }
+    /* Card IoT: layout horizontal en pantalla grande */
+    .service-card.full-width .service-card-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    }
+    .service-card.full-width .service-card-header {
+      border-bottom: none; border-right: 1px solid var(--border);
+    }
+    .service-card.full-width .service-card-body {
+      padding-left: 36px;
+    }
+    @media (max-width: 900px) {
+      .service-card.full-width .service-card-inner { grid-template-columns: 1fr; }
+      .service-card.full-width .service-card-header { border-right: none; border-bottom: 1px solid var(--border); }
+      .service-card.full-width .service-card-body { padding-left: 28px; }
+    }
+
+    /* ─── SERVICE CARD ─── */
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
+      text-decoration: none; color: inherit;
+    }
+    .service-card:hover {
+      box-shadow: 0 12px 40px rgba(26,59,204,0.11);
+      transform: translateY(-4px);
+    }
+    .service-card-header {
+      padding: 32px 32px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-icon-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .service-icon {
+      width: 48px; height: 48px;
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    }
+    .service-icon svg {
+      width: 24px; height: 24px; stroke: var(--blue);
+      fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .service-area-tag {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.10em;
+      text-transform: uppercase; color: var(--blue);
+      background: rgba(26,59,204,0.06); border: 1px solid rgba(26,59,204,0.12);
+      padding: 3px 10px; border-radius: 100px;
+    }
+    .service-card-header h3 {
+      font-size: 18px; font-weight: 800; color: var(--text);
+      margin-bottom: 10px; line-height: 1.25;
+    }
+    .service-card-header .tagline {
+      font-size: 13.5px; color: var(--blue); font-weight: 600; margin-bottom: 12px;
+    }
+    .service-card-header .summary {
+      font-size: 14px; color: var(--muted); line-height: 1.7;
+    }
+    .service-card-body {
+      padding: 24px 32px 28px;
+      flex: 1; display: flex; flex-direction: column;
+    }
+    .service-detail {
+      font-size: 13.5px; color: var(--muted); line-height: 1.75; margin-bottom: 22px;
+    }
+    .service-features {
+      display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;
+    }
+    .feature-item {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: 13px; color: var(--text); line-height: 1.5;
+    }
+    .feature-item svg {
+      width: 15px; height: 15px; stroke: var(--blue);
+      fill: none; stroke-width: 2.5; flex-shrink: 0; margin-top: 2px;
+    }
+    .service-tags {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px;
+    }
+    .stag {
+      font-size: 11px; font-weight: 600; padding: 3px 10px;
+      border-radius: 100px; background: var(--bg-soft);
+      border: 1px solid var(--border); color: var(--muted);
+    }
+    .service-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13.5px; font-weight: 700; color: var(--blue);
+      text-decoration: none; margin-top: auto; transition: gap .2s;
+    }
+    .service-link:hover { gap: 10px; }
+    .service-link svg {
+      width: 14px; height: 14px; stroke: var(--blue);
+      fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ─── METODOLOGÍA ─── */
+    .methodology-section {
+      padding: 80px 48px;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .methodology-grid {
+      display: grid; grid-template-columns: 1fr 1.5fr; gap: 72px; align-items: start;
+    }
+    .methodology-intro h2 {
+      font-size: 26px; font-weight: 800; color: var(--text);
+      margin-bottom: 14px; line-height: 1.25;
+    }
+    .methodology-intro p { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px; }
+    .steps { display: flex; flex-direction: column; }
+    .step {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 22px 0; border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 38px; height: 38px; flex-shrink: 0;
+      border: 2px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12.5px; font-weight: 800; color: var(--muted);
+      margin-top: 1px; transition: all .2s;
+    }
+    .step:hover .step-num {
+      border-color: var(--blue); color: var(--blue);
+      background: rgba(26,59,204,0.05);
+    }
+    .step-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: var(--text); }
+    .step-content p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, #112466 100%);
+      padding: 80px 48px; position: relative; overflow: hidden;
+    }
+    .cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 65% 100% at 95% 50%, rgba(26,59,204,0.25) 0%, transparent 70%);
+    }
+    .cta-band::after {
+      content: ''; position: absolute;
+      width: 500px; height: 500px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+      top: -200px; right: -100px; pointer-events: none;
+    }
+    .cta-inner {
+      max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .cta-text h2 {
+      font-size: 26px; font-weight: 800; color: var(--white);
+      margin-bottom: 14px; line-height: 1.25;
+    }
+    .cta-text p { font-size: 14.5px; color: rgba(255,255,255,0.68); line-height: 1.7; }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .cta-actions .btn-primary { font-size: 14.5px; padding: 12px 28px; }
+    .cta-note { font-size: 12.5px; color: rgba(255,255,255,0.38); margin-top: 4px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy-deep);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 52px 48px 28px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand img { height: 36px; margin-bottom: 12px; }
+    .footer-brand p {
+      font-size: 13.5px; color: rgba(255,255,255,0.38);
+      line-height: 1.65; max-width: 280px;
+    }
+    .footer-brand .socials { display: flex; gap: 10px; margin-top: 18px; }
+    .social-icon {
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; transition: background .2s;
+    }
+    .social-icon:hover { background: rgba(255,255,255,0.13); }
+    .social-icon svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.5); }
+    .footer-col h5 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.10em;
+      text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 9px; }
+    .footer-col ul li a {
+      font-size: 13.5px; color: rgba(255,255,255,0.48);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom {
+      max-width: 1100px; margin: 22px auto 0;
+      font-size: 12px; color: rgba(255,255,255,0.22); text-align: center;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 60px 20px; }
+      .intro { padding: 56px 20px; }
+      .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+      .services-section { padding: 56px 20px; }
+      .services-grid { grid-template-columns: 1fr; gap: 20px; }
+      .methodology-section { padding: 56px 20px; }
+      .methodology-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cta-band { padding: 60px 20px; }
+      .cta-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      footer { padding: 40px 20px 24px; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .intro-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/logo-dark.svg" alt="AD Ingeniería" height="35">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/nosotros/">Nosotros</a></li>
+    <li><a href="/servicios/" aria-current="page">Servicios</a></li>
+    <li><a href="/proyectos/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <a href="/#contacto" class="btn-primary">Contacto</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-label="Cabecera de servicios">
+  <div class="hero-bg" role="presentation"></div>
+  <div class="hero-overlay" role="presentation"></div>
+  <div class="hero-content">
+    <h1>Servicios de Ingeniería<br>y Tecnología</h1>
+    <p>
+      Integramos seguridad electrónica, automatización de procesos, infraestructura
+      de redes y soluciones IoT en proyectos B2B con exigencia técnica real.
+    </p>
+    <div class="hero-actions">
+      <a href="/#contacto" class="btn-primary">Solicitar evaluación</a>
+      <a href="/proyectos/" class="btn-outline">Ver proyectos</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" aria-labelledby="intro-heading">
+  <div class="intro-grid">
+    <div>
+      <h2 id="intro-heading">Ingeniería aplicada<br>a problemas reales</h2>
+      <p>
+        No ofrecemos catálogos de productos. Diseñamos soluciones a medida para
+        organizaciones que necesitan resultados concretos: sistemas que funcionan
+        en operación continua, infraestructura que escala y procesos que se
+        digitalizan sin interrumpir el negocio.
+      </p>
+      <p>
+        Cada proyecto parte de un levantamiento técnico en terreno. Evaluamos
+        el entorno, las restricciones operativas y la proyección futura del cliente
+        antes de proponer cualquier arquitectura. Así aseguramos que lo que
+        implementamos dure y entregue valor real.
+      </p>
+      <p>
+        Trabajamos en los cuatro ejes de la ingeniería tecnológica moderna:
+        seguridad, automatización, conectividad y soluciones digitales — de forma
+        integrada o por área, según las prioridades del proyecto.
+      </p>
+    </div>
+    <div class="intro-stats" aria-label="Indicadores de experiencia">
+      <div class="stat-box">
+        <div class="stat-num">+8</div>
+        <div class="stat-label">Años de experiencia en proyectos tecnológicos en Chile</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Áreas de ingeniería integradas en un solo equipo</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">B2B</div>
+        <div class="stat-label">Especialización en clientes empresariales e institucionales</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">CL</div>
+        <div class="stat-label">Operación en Santiago y regiones, con soporte presencial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services-section" aria-labelledby="services-heading">
+  <div class="section-header">
+    <span class="section-tag">Áreas de servicio</span>
+    <h2 id="services-heading">Soluciones diseñadas para entornos exigentes</h2>
+    <p>Cuatro líneas de especialización que se integran en proyectos reales, con ingeniería aplicada y soporte técnico directo.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <!-- 1. Seguridad Electrónica -->
+    <article class="service-card" aria-labelledby="s1-heading">
+      <div class="service-card-header">
+        <div class="service-icon-row">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="service-area-tag">Seguridad Electrónica</span>
+        </div>
+        <h3 id="s1-heading">CCTV, Control de Acceso y Monitoreo Centralizado</h3>
+        <p class="tagline">Vigilancia inteligente con plataformas Hikvision, Hik Central y Softguard</p>
+        <p class="summary">
+          Diseñamos e implementamos sistemas de seguridad electrónica completos para
+          edificios corporativos, condominios, plantas industriales y espacios críticos.
+        </p>
+      </div>
+      <div class="service-card-body">
+        <p class="service-detail">
+          La seguridad electrónica moderna no se limita a instalar cámaras. Requiere
+          arquitectura de red adecuada, almacenamiento dimensionado, lógica de alarmas y
+          una plataforma de gestión que permita operar todo desde un único punto de control.
+          Trabajamos con Hikvision como eje principal y los integramos con plataformas como
+          <strong>Hik Central</strong> para monitoreo unificado y <strong>Softguard</strong>
+          para control de acceso con identificación biométrica y tarjetas.
+          El resultado: visibilidad total del perímetro, trazabilidad de ingresos y alertas
+          en tiempo real, tanto on-premise como en la nube.
+        </p>
+        <div class="service-features" role="list" aria-label="Capacidades incluidas">
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            CCTV IP con grabación local, NAS o nube según requerimiento
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Control de acceso biométrico, tarjeta y PIN con Hik Central / Softguard
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Integración con alarmas, intercomunicadores y barreras vehiculares
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Monitoreo centralizado y reportería de eventos por zona
+          </div>
+        </div>
+        <div class="service-tags" aria-label="Tecnologías">
+          <span class="stag">Hikvision</span>
+          <span class="stag">Hik Central</span>
+          <span class="stag">Softguard</span>
+          <span class="stag">CCTV IP</span>
+          <span class="stag">Biometría</span>
+          <span class="stag">LPR</span>
+        </div>
+        <a href="/servicios/seguridad-electronica/" class="service-link">
+          Ver servicio completo
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- 2. Automatización -->
+    <article class="service-card" aria-labelledby="s2-heading">
+      <div class="service-card-header">
+        <div class="service-icon-row">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <span class="service-area-tag">Automatización Digital</span>
+        </div>
+        <h3 id="s2-heading">Automatización y Transformación Digital de Procesos</h3>
+        <p class="tagline">Power Apps, Power Automate y desarrollo de aplicaciones a medida</p>
+        <p class="summary">
+          Convertimos procesos manuales en flujos digitales eficientes, eliminando
+          tareas repetitivas y errores asociados al trabajo en papel o planillas.
+        </p>
+      </div>
+      <div class="service-card-body">
+        <p class="service-detail">
+          Muchas organizaciones operan con procesos críticos que dependen de correos,
+          planillas Excel o formularios en papel. Eso tiene un costo real en tiempo,
+          trazabilidad y errores humanos. Con el ecosistema <strong>Microsoft Power Platform</strong>
+          — Power Apps y Power Automate — desarrollamos aplicaciones internas y flujos
+          automatizados que se integran directamente con los sistemas que ya usan:
+          SharePoint, Teams, Excel, Outlook y otros. No es necesario migrar a plataformas
+          nuevas; se digitaliza desde donde ya están. Para requerimientos más específicos,
+          desarrollamos aplicaciones web y móviles personalizadas según el proceso exacto.
+        </p>
+        <div class="service-features" role="list" aria-label="Capacidades incluidas">
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Aplicaciones internas con Power Apps (web y móvil)
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Flujos de aprobación y notificación automática con Power Automate
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Integración con Microsoft 365, SharePoint y servicios externos
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Desarrollo de apps personalizadas para procesos operativos críticos
+          </div>
+        </div>
+        <div class="service-tags" aria-label="Tecnologías">
+          <span class="stag">Power Apps</span>
+          <span class="stag">Power Automate</span>
+          <span class="stag">SharePoint</span>
+          <span class="stag">Microsoft 365</span>
+          <span class="stag">Dataverse</span>
+        </div>
+        <a href="/servicios/transformacion-digital/" class="service-link">
+          Ver servicio completo
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- 3. Redes e Infraestructura -->
+    <article class="service-card" aria-labelledby="s3-heading">
+      <div class="service-card-header">
+        <div class="service-icon-row">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><line x1="5" y1="8" x2="5" y2="14"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="5" y1="14" x2="12" y2="19"/><line x1="19" y1="14" x2="12" y2="19"/></svg>
+          </div>
+          <span class="service-area-tag">Telecomunicaciones y Redes</span>
+        </div>
+        <h3 id="s3-heading">Redes Corporativas e Infraestructura de Telecomunicaciones</h3>
+        <p class="tagline">Diseño, implementación y mantenimiento de redes con certificación Ubiquiti</p>
+        <p class="summary">
+          Diseñamos infraestructuras de red que soportan la operación real del negocio:
+          wifi corporativo, redes segmentadas por VLAN, cableado estructurado certificado
+          y conectividad WAN confiable.
+        </p>
+      </div>
+      <div class="service-card-body">
+        <p class="service-detail">
+          Una red mal diseñada genera pérdidas de productividad, vulnerabilidades de
+          seguridad y costos de soporte que se acumulan. El problema no siempre es la
+          velocidad del internet contratado — muchas veces está en la infraestructura interna.
+          Como instaladores certificados <strong>Ubiquiti</strong>, diseñamos redes wifi
+          de alta densidad, redes cableadas con cableado estructurado categoría 6 y 6A,
+          y arquitecturas segmentadas que aíslan tráfico de seguridad, operación y usuarios.
+          También integramos soluciones de fibra óptica, VPN y monitoreo de red para
+          dar visibilidad completa al equipo de TI o directamente al cliente.
+        </p>
+        <div class="service-features" role="list" aria-label="Capacidades incluidas">
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Wi-Fi corporativo de alta densidad con equipos Ubiquiti UniFi
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Cableado estructurado certificado categoría 6 y 6A
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Segmentación por VLAN: operación, seguridad, invitados y IoT
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Monitoreo de red, VPN y gestión remota de infraestructura
+          </div>
+        </div>
+        <div class="service-tags" aria-label="Tecnologías">
+          <span class="stag">Ubiquiti UniFi</span>
+          <span class="stag">Cableado Cat6</span>
+          <span class="stag">VLAN</span>
+          <span class="stag">Fibra Óptica</span>
+          <span class="stag">VPN</span>
+          <span class="stag">Switching</span>
+        </div>
+        <a href="/servicios/redes-infraestructura/" class="service-link">
+          Ver servicio completo
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- 4. Seguridad Física -->
+    <article class="service-card" aria-labelledby="s4-heading">
+      <div class="service-card-header">
+        <div class="service-icon-row">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <span class="service-area-tag">Seguridad Física</span>
+        </div>
+        <h3 id="s4-heading">Seguridad Perimetral y Soluciones de Protección Física</h3>
+        <p class="tagline">Persianas de aluminio, cercos eléctricos y barreras perimetrales integradas</p>
+        <p class="summary">
+          Complementamos los sistemas electrónicos con soluciones de protección física
+          que disuaden, retardan y notifican ante intentos de intrusión en el perímetro.
+        </p>
+      </div>
+      <div class="service-card-body">
+        <p class="service-detail">
+          La seguridad integral requiere una primera línea física que frene o disuada
+          antes de que la electrónica actúe. Instalamos <strong>persianas de aluminio</strong>
+          de seguridad para cierres de locales y accesos críticos, y <strong>cercos
+          eléctricos</strong> de alta tensión no letal para perímetros de condominios,
+          plantas industriales y bodegas. Ambas soluciones pueden integrarse con el sistema
+          de alarma y el CCTV para generar alertas automáticas ante cualquier intervención.
+          La combinación de seguridad física y electrónica bajo una misma arquitectura reduce
+          las brechas entre capas y elimina los puntos ciegos que dejan los sistemas aislados.
+        </p>
+        <div class="service-features" role="list" aria-label="Capacidades incluidas">
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Persianas de aluminio de seguridad para locales y accesos críticos
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Cercos eléctricos perimetrales con central de alarma integrada
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Integración con CCTV y notificaciones automáticas por zona
+          </div>
+          <div class="feature-item" role="listitem">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Diseño de perímetro según normativa y requerimiento asegurador
+          </div>
+        </div>
+        <div class="service-tags" aria-label="Tecnologías">
+          <span class="stag">Persianas Aluminio</span>
+          <span class="stag">Cerco Eléctrico</span>
+          <span class="stag">Alarma Perimetral</span>
+          <span class="stag">Barreras</span>
+          <span class="stag">CCTV Integrado</span>
+        </div>
+        <a href="/servicios/seguridad-fisica/" class="service-link">
+          Ver servicio completo
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- 5. Electrónica e IoT -->
+    <article class="service-card full-width" aria-labelledby="s5-heading">
+      <div class="service-card-inner">
+        <div class="service-card-header">
+          <div class="service-icon-row">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <span class="service-area-tag">Electrónica e IoT</span>
+          </div>
+          <h3 id="s5-heading">Modernización de Sistemas Electrónicos y Proyectos IoT</h3>
+          <p class="tagline">Digitalización de equipos analógicos, automatización física y desarrollo de soluciones embebidas a medida</p>
+          <p class="summary">
+            Damos vida digital a sistemas analógicos que aún funcionan pero que
+            no se comunican, no registran datos ni se pueden monitorear remotamente.
+            También desarrollamos soluciones de automatización física para procesos
+            que todavía dependen de intervención manual innecesaria.
+          </p>
+          <p class="summary" style="margin-top:10px;">
+            El foco es la escala real: proyectos de pequeña y mediana complejidad
+            donde no tiene sentido una solución industrial de gran envergadura,
+            pero sí es necesario un resultado robusto, mantenible y adaptado al
+            contexto específico del cliente.
+          </p>
+        </div>
+        <div class="service-card-body">
+          <p class="service-detail">
+            Muchos negocios y organizaciones tienen equipos que llevan años funcionando
+            correctamente — dispensadores de combustible, lectores de precios, contadores,
+            sistemas de riego, tableros de control — pero que son completamente ciegos:
+            no tienen conectividad, no generan registros y no se pueden supervisar sin
+            estar físicamente presentes. Reemplazarlos es costoso e innecesario cuando
+            la electrónica de fondo sigue siendo sólida.<br><br>
+            Desarrollamos interfaces y módulos embebidos que se integran a estos sistemas
+            sin reemplazarlos: agregamos comunicación serial, Wi-Fi, telemetría y
+            dashboards de monitoreo usando plataformas como <strong>ESP32, Arduino,
+            Raspberry Pi</strong> y protocolos estándar (MQTT, Modbus, HTTP). Para
+            automatización de procesos físicos — riego, control de acceso mecánico,
+            dosificación, monitoreo ambiental — diseñamos el hardware y el software
+            de forma integrada, con énfasis en fiabilidad en campo.
+          </p>
+          <div class="service-features" role="list" aria-label="Ejemplos de aplicación">
+            <div class="feature-item" role="listitem">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Modernización de dispensadores de combustible analógicos con telemetría y registro digital
+            </div>
+            <div class="feature-item" role="listitem">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Lectores y actualizadores de precios para librerías y tiendas pequeñas
+            </div>
+            <div class="feature-item" role="listitem">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Automatización de sistemas de riego con sensores de humedad y control remoto
+            </div>
+            <div class="feature-item" role="listitem">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Integración de equipos con protocolos seriales (RS-232, RS-485, Modbus) a plataformas modernas
+            </div>
+            <div class="feature-item" role="listitem">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Dashboards de monitoreo en tiempo real para equipos industriales o de campo
+            </div>
+            <div class="feature-item" role="listitem">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Desarrollo de prototipos y productos electrónicos a medida para PYMES
+            </div>
+          </div>
+          <div class="service-tags" aria-label="Tecnologías">
+            <span class="stag">ESP32 / Arduino</span>
+            <span class="stag">Raspberry Pi</span>
+            <span class="stag">MQTT</span>
+            <span class="stag">Modbus / RS-485</span>
+            <span class="stag">IoT</span>
+            <span class="stag">Node-RED</span>
+            <span class="stag">Sensores</span>
+            <span class="stag">Electrónica embebida</span>
+          </div>
+          <a href="/servicios/electronica-iot/" class="service-link">
+            Ver servicio completo
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- METODOLOGÍA -->
+<section class="methodology-section" aria-labelledby="method-heading">
+  <div class="methodology-grid">
+    <div class="methodology-intro">
+      <span class="section-tag">Forma de trabajo</span>
+      <h2 id="method-heading">Cómo abordamos cada proyecto</h2>
+      <p>
+        Cada implementación sigue un proceso estructurado que minimiza el riesgo
+        técnico y asegura que la solución responda exactamente al problema real,
+        no a una suposición de escritorio.
+      </p>
+      <p>
+        El levantamiento en terreno es no negociable. Sin entender el entorno
+        real — infraestructura existente, condiciones de operación, restricciones
+        de espacio — no es posible diseñar algo que funcione a largo plazo.
+      </p>
+      <a href="/nosotros/" class="btn-sm">Conocer el equipo</a>
+    </div>
+    <ol class="steps" role="list" aria-label="Fases del proyecto">
+      <li class="step">
+        <div class="step-num" aria-hidden="true">01</div>
+        <div class="step-content">
+          <h4>Levantamiento y diagnóstico</h4>
+          <p>Visita técnica al sitio para relevar infraestructura existente, entender el problema real y dimensionar la solución. Nada se propone sin este paso.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num" aria-hidden="true">02</div>
+        <div class="step-content">
+          <h4>Diseño y arquitectura</h4>
+          <p>Elaboramos la arquitectura de la solución con especificación técnica detallada: equipos, topología, integraciones y fases de implementación.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num" aria-hidden="true">03</div>
+        <div class="step-content">
+          <h4>Implementación controlada</h4>
+          <p>Ejecución técnica del proyecto con coordinación directa con el cliente. Cada etapa se valida antes de avanzar a la siguiente.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num" aria-hidden="true">04</div>
+        <div class="step-content">
+          <h4>Pruebas, entrega y documentación</h4>
+          <p>Validación funcional completa, capacitación al equipo del cliente y entrega de documentación técnica de la instalación.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-num" aria-hidden="true">05</div>
+        <div class="step-content">
+          <h4>Soporte y escalabilidad</h4>
+          <p>Acompañamiento post-implementación y planificación de fases de crecimiento para que el sistema evolucione con el negocio.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2 id="cta-heading">¿Tienes un proyecto<br>o problema técnico?</h2>
+      <p>
+        Evaluamos tu caso sin costo ni compromiso. Cuéntanos el contexto y te
+        proponemos el enfoque más adecuado — sin presionar hacia una solución
+        específica antes de entender lo que realmente necesitas.
+      </p>
+    </div>
+    <div class="cta-actions">
+      <a href="/#contacto" class="btn-primary">Solicitar evaluación gratuita</a>
+      <p class="cta-note">Respuesta en menos de 24 horas hábiles · Sin compromiso</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/assets/logo-white.svg" alt="AD Ingeniería">
+      <p>Ingeniería y tecnología B2B en Chile. Seguridad electrónica, automatización, redes e infraestructura tecnológica.</p>
+      <div class="socials" aria-label="Redes sociales">
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="/servicios/seguridad-electronica/">Seguridad Electrónica</a></li>
+        <li><a href="/servicios/transformacion-digital/">Automatización Digital</a></li>
+        <li><a href="/servicios/redes-infraestructura/">Redes e Infraestructura</a></li>
+        <li><a href="/servicios/seguridad-fisica/">Seguridad Física</a></li>
+        <li><a href="/servicios/electronica-iot/">Electrónica e IoT</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="/nosotros/">Nosotros</a></li>
+        <li><a href="/proyectos/">Proyectos</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="/cdn-cgi/l/email-protection#2744484953464453486746434e494042494e42554e4609444b"><span class="__cf_email__" data-cfemail="294a46475d484a5d4669484d40474e4c47404c5b4048074a45">[email&#160;protected]</span></a></li>
+        <li><a href="/#contacto">Formulario de contacto</a></li>
+        <li><a href="https://maps.google.com/?q=Santiago,Chile" rel="noopener">Santiago, Chile</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-bottom">© <span id="yr"></span> AD Ingeniería SpA · Todos

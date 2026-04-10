@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+            <!-- SVG moderno -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo-simple.svg">
+    
+    <!-- PNG fallback -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    
+    <!-- Apple (iPhone) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    
+    <!-- Para tema claro/oscuro -->
+    <link rel="icon" href="/assets/logo-simple.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/assets/logo-simple.svg" media="(prefers-color-scheme: dark)">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | AD Ingeniería — Solicitar Asesoría Técnica Chile</title>
+  <meta name="description" content="Contacta a AD Ingeniería para solicitar asesoría técnica en seguridad electrónica, automatización, redes e infraestructura en Chile. Respuesta en 24 horas." />
+  <link rel="canonical" href="https://adingenieria.cl/contacto/" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/shared.css" />
+  <style>
+    .contact-wrap {
+      max-width: 1100px; margin: 0 auto; padding: 80px 48px;
+      display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start;
+    }
+    .contact-side h2 { font-size: 28px; font-weight: 800; margin-bottom: 14px; }
+    .contact-side > p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 36px; }
+
+    .contact-info-card {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px 24px; margin-bottom: 16px;
+    }
+    .contact-info-card h4 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 14px;
+    }
+    .contact-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-item svg { width: 17px; height: 17px; stroke: var(--blue); fill: none; stroke-width: 2; flex-shrink: 0; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-item a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .contact-item a:hover { color: var(--blue); }
+
+    .services-check { list-style: none; }
+    .services-check li { font-size: 13.5px; color: var(--muted); padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .services-check li:last-child { border-bottom: none; }
+    .services-check li a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .services-check li a:hover { color: var(--blue); }
+    .check-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; opacity: 0.7; }
+
+    /* Form box */
+    .form-box {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: 16px; padding: 40px;
+    }
+    .form-box h3 { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+    .form-box > p { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--text); }
+    .form-group input,
+    .form-group textarea {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--border); border-radius: 7px;
+      font-size: 14px; font-family: inherit; color: var(--text);
+      background: var(--white); transition: border-color .2s; outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #b0b5c8; }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-group select {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--border); border-radius: 7px;
+      font-size: 14px; font-family: inherit; color: var(--text);
+      background: var(--white); transition: border-color .2s;
+      outline: none; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6073' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; cursor: pointer;
+    }
+    .form-group select:focus { border-color: var(--blue); }
+    .field-error { display: block; font-size: 12px; color: #e53e3e; margin-top: 4px; min-height: 16px; }
+    .form-group input.error, .form-group textarea.error { border-color: #e53e3e; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn-submit {
+      width: 100%; background: var(--blue); color: var(--white);
+      border: none; padding: 13px 20px; border-radius: 7px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; transition: background .2s;
+    }
+    .btn-submit:hover:not(:disabled) { background: var(--blue-dark); }
+    .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+    .form-note { text-align: center; font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+    @media (max-width: 768px) {
+      .contact-wrap { grid-template-columns: 1fr; gap: 48px; padding: 56px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-box { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo-dark.svg" alt="AD Ingeniería" /></a>
+  <ul class="nav-links">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/nosotros/">Nosotros</a></li>
+    <li><a href="/servicios/">Servicios</a></li>
+    <li><a href="/proyectos/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/" class="active">Contacto</a></li>
+  </ul>
+  <a href="/contacto/" class="btn-primary">Solicitar Evaluación</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1400&q=80');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-breadcrumb"><a href="/">Inicio</a><span>/</span> Contacto</div>
+    <h1>Solicitar Asesoría Técnica</h1>
+    <p>Cuéntanos tu proyecto o requerimiento. Nuestro equipo técnico analiza tu caso y te responde en un máximo de 24 horas hábiles.</p>
+  </div>
+</section>
+
+<section style="background:var(--white);">
+  <div class="contact-wrap">
+    <div class="contact-side">
+      <span class="section-label">Contacto Directo</span>
+      <h2>Hablemos sobre tu proyecto</h2>
+      <p>No necesitas tener todo claro para contactarnos. A veces basta con describir el problema que quieres resolver.</p>
+
+      <div class="contact-info-card">
+        <h4>Información Directa</h4>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:contacto@adingenieria.cl">contacto@adingenieria.cl</a>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Santiago, Chile
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Respuesta en máx. 24 horas hábiles
+        </div>
+      </div>
+
+      <div class="contact-info-card">
+        <h4>Podemos ayudarte con</h4>
+        <ul class="services-check">
+          <li><span class="check-dot"></span><a href="/servicios/seguridad-electronica/">Seguridad Electrónica — Hik Central, Softguard, CCTV</a></li>
+          <li><span class="check-dot"></span><a href="/servicios/automatizacion-power-apps/">Automatización — Power Apps, Power Automate</a></li>
+          <li><span class="check-dot"></span><a href="/servicios/redes-infraestructura/">Redes e Infraestructura — Ubiquiti, Cableado Estructurado</a></li>
+          <li><span class="check-dot"></span><a href="/servicios/seguridad-fisica/">Seguridad Física — Cortinas Aluminio, Cercos Eléctricos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-box">
+      <h3>Formulario de Contacto</h3>
+      <p>Completa el formulario y te contactamos a la brevedad.</p>
+
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-nombre">Nombre completo <span style="color:#e53e3e">*</span></label>
+            <input type="text" id="f-nombre" name="nombre" placeholder="Ej. Juan Pérez" autocomplete="name" />
+            <span class="field-error" id="err-nombre"></span>
+          </div>
+          <div class="form-group">
+            <label for="f-telefono">Teléfono <span style="color:var(--muted);font-weight:400">(opcional)</span></label>
+            <input type="tel" id="f-telefono" name="telefono" placeholder="+56 9 1234 5678" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="f-email">Correo electrónico <span style="color:#e53e3e">*</span></label>
+          <input type="email" id="f-email" name="email" placeholder="ejemplo@empresa.com" autocomplete="email" />
+          <span class="field-error" id="err-email"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="f-servicio">Servicio de interés <span style="color:var(--muted);font-weight:400">(opcional)</span></label>
+          <select id="f-servicio" name="servicio">
+            <option value="">— Selecciona una opción —</option>
+            <option value="Seguridad Electrónica">Seguridad Electrónica</option>
+            <option value="Automatización y Power Apps">Automatización y Power Apps</option>
+            <option value="Telecomunicaciones e Infraestructura">Telecomunicaciones e Infraestructura</option>
+            <option value="Seguridad Física y Perimetral">Seguridad Física y Perimetral</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="f-mensaje">Mensaje <span style="color:#e53e3e">*</span></label>
+          <textarea id="f-mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto o requerimiento..."></textarea>
+          <span class="field-error" id="err-mensaje"></span>
+        </div>
+
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAACyk_yHWKIgXub_S" data-theme="light" style="margin-bottom:16px;"></div>
+
+        <button class="btn-submit" type="submit" id="btnSubmit">
+          <span id="btnText">Enviar mensaje</span>
+          <svg id="btnIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+          <svg id="btnSpinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" style="display:none;animation:spin .8s linear infinite">
+            <path d="M12 2a10 10 0 0 1 10 10"/>
+          </svg>
+        </button>
+
+        <div id="formStatus" style="display:none;margin-top:12px;padding:12px 16px;border-radius:8px;font-size:13.5px;font-weight:500;text-align:center;"></div>
+        <p class="form-note">Al enviar, aceptas nuestra política de privacidad.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+  var form=document.getElementById('contactForm'),btnSubmit=document.getElementById('btnSubmit'),btnText=document.getElementById('btnText'),btnIcon=document.getElementById('btnIcon'),btnSpinner=document.getElementById('btnSpinner'),formStatus=document.getElementById('formStatus');
+  function setError(f,e,m){var fi=document.getElementById(f),er=document.getElementById(e);if(m){fi.classList.add('error');er.textContent=m;}else{fi.classList.remove('error');er.textContent='';}}
+  function validate(){var n=document.getElementById('f-nombre').value.trim(),em=document.getElementById('f-email').value.trim(),m=document.getElementById('f-mensaje').value.trim();setError('f-nombre','err-nombre',n===''?'El nombre es obligatorio.':'');setError('f-email','err-email',!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)?'Ingresa un correo válido.':'');setError('f-mensaje','err-mensaje',m.length<10?'El mensaje debe tener al menos 10 caracteres.':'');return n!==''&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)&&m.length>=10;}
+  function setLoading(l){btnSubmit.disabled=l;btnText.textContent=l?'Enviando...':'Enviar mensaje';btnIcon.style.display=l?'none':'block';btnSpinner.style.display=l?'block':'none';}
+  function showStatus(ok,msg){formStatus.style.display='block';formStatus.textContent=msg;formStatus.style.background=ok?'#f0fdf4':'#fff5f5';formStatus.style.color=ok?'#166534':'#9b2c2c';formStatus.style.border=ok?'1px solid #bbf7d0':'1px solid #fed7d7';}
+  form.addEventListener('submit',async function(e){e.preventDefault();if(!validate())return;var ts=document.querySelector('[name="cf-turnstile-response"]');if(!ts||!ts.value){showStatus(false,'Por favor completa el captcha antes de enviar.');return;}setLoading(true);formStatus.style.display='none';try{var d=new FormData(form),r=await fetch('/contact.php',{method:'POST',body:d}),j=await r.json();if(j.success){showStatus(true,j.message||'¡Mensaje enviado! Te contactaremos pronto.');form.reset();if(window.turnstile)turnstile.reset();}else{showStatus(false,j.message||'Error al enviar.');}}catch(err){showStatus(false,'Error de conexión.');}finally{setLoading(false);}});
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><img src="/assets/logo-dark.svg" alt="AD Ingeniería" style="height:22px;filter:brightness(0) invert(1);" /></a>
+      <p>Soluciones de Ingeniería y Tecnología. Desarrollamos e implementamos soluciones orientadas a la integración de sistemas, automatización y optimización de procesos.</p>
+      <div class="socials"><a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a></div>
+    </div>
+    <div class="footer-col"><h5>Navegación</h5><ul><li><a href="/">Inicio</a></li><li><a href="/nosotros/">Nosotros</a></li><li><a href="/#servicios">Servicios</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contacto/">Contacto</a></li></ul></div>
+   <div class="footer-col"><h5>Servicios</h5><ul><li><a href="/servicios/seguridad-electronica/">Seguridad Electrónica</a></li><li><a href="/servicios/transformacion-digital/">Transformación Digital</a></li><li><a href="/servicios/redes-infraestructura/">Redes e Infraestructura</a></li><li><a href="/servicios/electronica-iot/">Electrónica e IoT</a></li><li><a href="/servicios/seguridad-fisica/">Seguridad Física</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="mailto:contacto@adingenieria.cl">contacto@adingenieria.cl</a></li><li><a href="#">Santiago, Chile</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 AD Ingeniería. Todos los derechos reservados.</div>
+</footer>
+</body>
+</html>
