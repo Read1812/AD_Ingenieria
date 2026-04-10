@@ -11,25 +11,25 @@ ini_set('display_errors', 0);
 error_reporting(E_ALL);
 
 // ─── CONFIGURACIÓN ────────────────────────────────────────────
-define('CF_TURNSTILE_SECRET', '0x4AAAAAACyk_0iGOGy2DPsN4ycJh2vAdlU');
+define('CF_TURNSTILE_SECRET', getenv('CF_TURNSTILE_SECRET') ?: '');
 
 // DB ────────────────────────────────────────────────
-define('DB_HOST',    'localhost');
-define('DB_NAME',    'u977895088_adingen_Db');
-define('DB_USER',    'u977895088_Richard_adm');
-define('DB_PASS',    'AD_InG2026');
+define('DB_HOST',    getenv('DB_HOST') ?: 'localhost');
+define('DB_NAME',    getenv('DB_NAME') ?: '');
+define('DB_USER',    getenv('DB_USER') ?: '');
+define('DB_PASS',    getenv('DB_PASS') ?: '');
 define('DB_CHARSET', 'utf8mb4');
 
 // MAIL ────────────────────────────────────────────
-define('MAIL_TO',   'contacto@adingenieria.cl');
-define('MAIL_FROM', 'no-reply@adingenieria.cl');
-define('MAIL_NAME', 'AD Ingeniería');
+define('MAIL_TO',   getenv('MAIL_TO') ?: 'contacto@adingenieria.cl');
+define('MAIL_FROM', getenv('MAIL_FROM') ?: 'no-reply@adingenieria.cl');
+define('MAIL_NAME', getenv('MAIL_NAME') ?: 'AD Ingeniería');
 
 // SMTP────────────────────────────────────────────
-define('SMTP_HOST', 'smtp.hostinger.com');
-define('SMTP_PORT', 465);
-define('SMTP_USER', 'no-reply@adingenieria.cl');
-define('SMTP_PASS', 'NR_ADing1234');
+define('SMTP_HOST', getenv('SMTP_HOST') ?: '');
+define('SMTP_PORT', (int)(getenv('SMTP_PORT') ?: 465));
+define('SMTP_USER', getenv('SMTP_USER') ?: '');
+define('SMTP_PASS', getenv('SMTP_PASS') ?: '');
 
 // ─── HEADERS ─────────────────────────────────────────────────
 header('Content-Type: application/json; charset=utf-8');

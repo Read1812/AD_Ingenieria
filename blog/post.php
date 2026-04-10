@@ -12,9 +12,9 @@ if (!$slug || !preg_match('/^[a-z0-9-]+$/', $slug)) {
 // ─── Conexión DB ──────────────────────────────────────────────
 try {
     $pdo = new PDO(
-        'mysql:host=localhost;dbname=u977895088_adingen_Db;charset=utf8mb4',
-        'u977895088_Richard_adm',
-        'AD_InG2026',
+        'mysql:host='.(getenv('DB_HOST') ?: 'localhost').';dbname='.(getenv('DB_NAME') ?: '').';charset=utf8mb4',
+        getenv('DB_USER') ?: '',
+        getenv('DB_PASS') ?: '',
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
     );
 
