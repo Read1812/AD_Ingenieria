@@ -1,0 +1,337 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+                <!-- SVG moderno -->
+        <link rel="icon" type="image/svg+xml" href="/assets/logo-simple.svg">
+        
+        <!-- PNG fallback -->
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+        
+        <!-- Apple (iPhone) -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+        
+        <!-- Para tema claro/oscuro -->
+        <link rel="icon" href="/assets/logo-simple.svg" media="(prefers-color-scheme: light)">
+        <link rel="icon" href="/assets/logo-simple.svg" media="(prefers-color-scheme: dark)">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nosotros | AD Ingeniería — Consultoría en Ingeniería y Tecnología Chile</title>
+        <meta name="description" content="Conoce el equipo de AD Ingeniería: ingeniería en automatización y consultoría en seguridad electrónica. Experiencia en proyectos críticos en Chile." />
+        <link rel="canonical" href="https://adingenieria.cl/nosotros/" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../assets/shared.css" />
+        <style>
+        /* ─── NOSOTROS ─── */
+        .about-wrap {
+          max-width: 1100px; margin: 0 auto;
+          padding: 80px 48px;
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: 72px; align-items: center;
+        }
+        .about-wrap h2 { font-size: 28px; font-weight: 800; margin-bottom: 20px; line-height: 1.25; }
+        .about-wrap p { font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+        .about-image img {
+          width: 100%; border-radius: 14px; object-fit: cover;
+          aspect-ratio: 4/3; display: block;
+        }
+    
+        /* ─── VALORES ─── */
+        .values-section { background: var(--bg-soft); padding: 80px 48px; }
+        .values-inner { max-width: 1100px; margin: 0 auto; }
+        .values-header { margin-bottom: 48px; }
+        .values-grid {
+          display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .value-card {
+          background: var(--white); border: 1px solid var(--border);
+          border-radius: 12px; padding: 28px 26px;
+          transition: box-shadow .2s, transform .2s;
+        }
+        .value-card:hover { box-shadow: 0 8px 28px rgba(26,59,204,0.09); transform: translateY(-3px); }
+        .value-icon {
+          width: 44px; height: 44px; background: var(--bg-soft);
+          border-radius: 10px; display: flex; align-items: center;
+          justify-content: center; margin-bottom: 16px;
+        }
+        .value-icon svg { width: 22px; height: 22px; stroke: var(--blue); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .value-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+        .value-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+    
+        /* ─── EQUIPO ─── */
+        .team-section { background: var(--white); padding: 80px 48px; }
+        .team-inner { max-width: 1100px; margin: 0 auto; }
+        .team-header { margin-bottom: 48px; }
+        .team-grid {
+          display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+        }
+        .team-card {
+          background: var(--bg-soft); border: 1px solid var(--border);
+          border-radius: 14px; padding: 36px; display: flex; gap: 28px; align-items: flex-start;
+          transition: box-shadow .2s;
+        }
+        .team-card:hover { box-shadow: 0 8px 28px rgba(26,59,204,0.08); }
+        .team-avatar {
+          width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 26px; font-weight: 800; color: white;
+        }
+        .team-info h3 { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+        .team-role {
+          font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+          text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: block;
+        }
+        .team-info p { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+        .team-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+        .team-tag {
+          font-size: 11px; font-weight: 600; padding: 3px 9px;
+          border-radius: 100px; background: var(--white); border: 1px solid var(--border);
+          color: var(--muted);
+        }
+    
+        /* ─── EXPERIENCIA / NÚMEROS ─── */
+        .stats-section {
+          background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, #112466 100%);
+          padding: 72px 48px; position: relative; overflow: hidden;
+        }
+        .stats-section::before {
+          content: ''; position: absolute; inset: 0;
+          background: radial-gradient(ellipse 65% 100% at 90% 50%, rgba(26,59,204,0.22) 0%, transparent 70%);
+        }
+        .stats-inner {
+          max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
+          display: grid; grid-template-columns: 1fr 3fr; gap: 72px; align-items: center;
+        }
+        .stats-text h2 { font-size: 26px; font-weight: 800; color: var(--white); margin-bottom: 12px; line-height: 1.25; }
+        .stats-text p { font-size: 14.5px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .stat-item { border-left: 2px solid rgba(255,255,255,0.12); padding-left: 20px; }
+        .stat-num {
+          font-size: 38px; font-weight: 800; color: var(--white); line-height: 1;
+        }
+        .stat-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 6px; line-height: 1.4; }
+    
+        @media (max-width: 768px) {
+          .about-wrap, .stats-inner { grid-template-columns: 1fr; gap: 40px; padding: 56px 20px; }
+          .values-section, .team-section { padding: 56px 20px; }
+          .values-grid, .team-grid { grid-template-columns: 1fr; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .team-card { flex-direction: column; }
+        }
+      </style>
+    </head>
+    <body>
+    
+    <nav>
+      <a href="/" class="nav-logo"><img src="/assets/logo-dark.svg" alt="AD Ingeniería" /></a>
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/nosotros/" class="active">Nosotros</a></li>
+        <li><a href="/servicios/">Servicios</a></li>
+        <li><a href="/proyectos/">Proyectos</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contacto/">Contacto</a></li>
+      </ul>
+      <a href="/contacto/" class="btn-primary">Solicitar Evaluación</a>
+    </nav>
+    
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80');"></div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <div class="page-hero-breadcrumb">
+          <a href="/">Inicio</a><span>/</span> Nosotros
+        </div>
+        <h1>El Equipo detrás de AD Ingeniería</h1>
+        <p>Combinamos ingeniería en automatización y consultoría en seguridad para ofrecer soluciones tecnológicas integrales con criterio técnico real.</p>
+      </div>
+    </section>
+    
+    <!-- QUIÉNES SOMOS -->
+    <section style="background:var(--white);">
+      <div class="about-wrap">
+        <div>
+          <span class="section-label">Quiénes Somos</span>
+          <h2>Una consultoría técnica especializada, no un proveedor más</h2>
+          <p>AD Ingeniería nació de la convicción de que las empresas chilenas merecen más que un servicio de instalación: merecen un socio técnico que entienda su operación, diseñe la solución correcta y acompañe el proyecto de principio a fin.</p>
+          <p>Operamos desde Santiago y trabajamos con clientes en distintos sectores: industrial, retail, corporativo e infraestructura crítica. Cada proyecto parte de un levantamiento técnico riguroso y termina con documentación completa y soporte continuo.</p>
+          <p>Lo que nos diferencia es la combinación de disciplinas: ingeniería en automatización + consultoría en seguridad electrónica en un mismo equipo, lo que nos permite abordar proyectos complejos con una visión 360° que pocas empresas pueden ofrecer.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80" alt="Equipo AD Ingeniería" />
+        </div>
+      </div>
+    </section>
+    
+    <!-- VALORES -->
+    <section class="values-section">
+      <div class="values-inner">
+        <div class="values-header">
+          <span class="section-label">Nuestros Principios</span>
+          <h2 class="section-title">Cómo trabajamos</h2>
+        </div>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <h3>Criterio técnico primero</h3>
+            <p>No recomendamos tecnología por margen comercial. Recomendamos lo que técnicamente es correcto para cada caso, con argumentos documentados.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Compromiso con los plazos</h3>
+            <p>Gestionamos cada proyecto con metodologías ágiles y comunicación constante. El cliente siempre sabe en qué etapa está su proyecto.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Relación de largo plazo</h3>
+            <p>No terminamos en la entrega. Proveemos soporte técnico, actualizaciones y planificación de crecimiento para que la solución evolucione con el cliente.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Escalabilidad desde el diseño</h3>
+            <p>Diseñamos pensando en el futuro. Cada arquitectura contempla la posibilidad de crecer, integrar nuevas tecnologías o replicarse en otras sedes.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Seguridad como disciplina</h3>
+            <p>La seguridad no es un add-on: es una disciplina que se integra en cada solución desde el diseño, siguiendo estándares internacionales y buenas prácticas.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Documentación completa</h3>
+            <p>Cada proyecto se entrega con documentación técnica detallada: diagramas, configuraciones, manuales y protocolos de operación.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- EQUIPO -->
+    <section class="team-section">
+      <div class="team-inner">
+        <div class="team-header">
+          <span class="section-label">Nuestro Equipo</span>
+          <h2 class="section-title">Experiencia técnica especializada</h2>
+        </div>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar" style="background:linear-gradient(135deg,#1a3bcc,#2a4de0);">A</div>
+            <div class="team-info">
+              <h3>Andrés Díaz</h3>
+              <span class="team-role">Ingeniero en Automatización · Fundador</span>
+              <p>Especialista en automatización de procesos, integración de sistemas e infraestructura tecnológica. Experiencia en proyectos de alta complejidad en entornos industriales y corporativos.</p>
+              <div class="team-tags">
+                <span class="team-tag">Power Apps</span>
+                <span class="team-tag">Power Automate</span>
+                <span class="team-tag">Redes Ubiquiti</span>
+                <span class="team-tag">Automatización Industrial</span>
+              </div>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7);">D</div>
+            <div class="team-info">
+              <h3>Daniela Aguayo</h3>
+              <span class="team-role">Consultora en Seguridad Electrónica · Socia</span>
+              <p>Consultora especializada en diseño de proyectos de seguridad electrónica. Experiencia en integración de sistemas CCTV, VMS avanzado y plataformas de monitoreo centralizado.</p>
+              <div class="team-tags">
+                <span class="team-tag">Hik Central</span>
+                <span class="team-tag">Softguard</span>
+                <span class="team-tag">CCTV Multimarca</span>
+                <span class="team-tag">Control de Acceso</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- STATS -->
+    <section class="stats-section">
+      <div class="stats-inner">
+        <div class="stats-text">
+          <h2>Experiencia en proyectos críticos</h2>
+          <p>Hemos trabajado en entornos exigentes donde la continuidad operativa y la precisión técnica no son negociables.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Sectores de especialización</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">24h</div>
+            <div class="stat-label">Tiempo de respuesta promedio</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Proyectos documentados</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="cta-band-inner">
+        <div>
+          <h2>¿Quieres trabajar con nosotros?</h2>
+          <p>Cuéntanos tu proyecto. Analizamos tu caso sin costo y te proponemos la solución técnica más adecuada.</p>
+        </div>
+        <a href="/contacto/" class="btn-primary">Contactar al equipo</a>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo"><img src="/assets/logo-dark.svg" alt="AD Ingeniería" style="height:22px;filter:brightness(0) invert(1);" /></a>
+          <p>Soluciones de Ingeniería y Tecnología. Desarrollamos e implementamos soluciones orientadas a la integración de sistemas, automatización y optimización de procesos.</p>
+          <div class="socials">
+            <a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/nosotros/">Nosotros</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/proyectos/">Proyectos</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contacto/">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="/servicios/seguridad-electronica/">Seguridad Electrónica</a></li>
+            <li><a href="/servicios/automatizacion-power-apps/">Automatización Digital</a></li>
+            <li><a href="/servicios/redes-infraestructura/">Redes e Infraestructura</a></li>
+            <li><a href="/servicios/seguridad-fisica/">Seguridad Física</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <ul>
+            <li><a href="mailto:contacto@adingenieria.cl">contacto@adingenieria.cl</a></li>
+            <li><a href="#">Santiago, Chile</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 AD Ingeniería. Todos los derechos reservados.</div>
+    </footer>
+    
+    </body>
+    </html>

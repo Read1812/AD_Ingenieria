@@ -1,0 +1,28 @@
+# ── No indexar por buscadores ─────────────────────────────────
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+
+    # ── Desactivar inyección de scripts del CDN de Hostinger ───
+    # Evita que hcdn modifique el HTML de esta página
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Surrogate-Control "no-store"
+    Header set X-Accel-Expires "0"
+
+    # Desactiva optimizaciones del CDN que modifican el HTML
+    Header set X-LiteSpeed-Cache-Control "no-cache"
+    Header unset X-LiteSpeed-Tag
+</IfModule>
+
+# ── No listar archivos del directorio ─────────────────────────
+Options -Indexes
+
+# ── Desactivar LiteSpeed Cache para este directorio ───────────
+<IfModule LiteSpeed>
+    CacheDisable public /
+</IfModule>
+
+# ── Desactivar compresión HTML (evita que el CDN procese el HTML) ──
+<IfModule mod_deflate.c>
+    SetEnvIfNoCase Request_URI ^/admin/ no-gzip dont-vary
+</IfModule>

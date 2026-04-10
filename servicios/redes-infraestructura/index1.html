@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+            <!-- SVG moderno -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo-simple.svg">
+    
+    <!-- PNG fallback -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    
+    <!-- Apple (iPhone) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    
+    <!-- Para tema claro/oscuro -->
+    <link rel="icon" href="/assets/logo-simple.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/assets/logo-simple.svg" media="(prefers-color-scheme: dark)">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telecomunicaciones e Infraestructura de Redes Chile | Ubiquiti — AD Ingeniería</title>
+  <meta name="description" content="Diseño e implementación de redes corporativas en Chile. Cableado estructurado certificado, tecnología Ubiquiti Wireless, LAN/WAN y canalización industrial. AD Ingeniería." />
+  <meta name="keywords" content="redes corporativas Chile, Ubiquiti Chile, cableado estructurado Chile, infraestructura de redes, LAN WAN Chile, certificación Ubiquiti" />
+  <link rel="canonical" href="https://adingenieria.cl/servicios/redes-infraestructura/" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/shared.css" />
+  <style>
+    .service-intro { padding: 80px 48px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 72px; align-items: center; }
+    .service-intro h2 { font-size: 28px; font-weight: 800; margin-bottom: 20px; line-height: 1.25; }
+    .service-intro p { font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+    .service-intro-img img { width: 100%; border-radius: 14px; object-fit: cover; aspect-ratio: 4/3; display: block; }
+
+    .detail-section { padding: 80px 48px; }
+    .detail-inner { max-width: 1100px; margin: 0 auto; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+    .detail-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px; transition: box-shadow .2s, transform .2s; }
+    .detail-card:hover { box-shadow: 0 8px 28px rgba(26,59,204,0.09); transform: translateY(-3px); }
+    .detail-icon { width: 44px; height: 44px; background: var(--bg-soft); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .detail-icon svg { width: 22px; height: 22px; stroke: var(--blue); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .detail-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .detail-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 12px; }
+    .detail-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .detail-tag { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 100px; background: var(--bg-soft); border: 1px solid var(--border); color: var(--muted); }
+
+    .cert-section { background: var(--bg-soft); padding: 80px 48px; }
+    .cert-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .cert-text h2 { font-size: 26px; font-weight: 800; margin-bottom: 16px; line-height: 1.25; }
+    .cert-text p { font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+    .cert-badge { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 32px; display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px; }
+    .cert-badge-icon { width: 52px; height: 52px; border-radius: 12px; background: var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cert-badge-icon svg { width: 26px; height: 26px; stroke: white; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .cert-badge h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .cert-badge p { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    .process-section { background: var(--white); padding: 80px 48px; }
+    .process-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; }
+    .process-intro h2 { font-size: 26px; font-weight: 800; margin-bottom: 14px; line-height: 1.25; }
+    .process-intro p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+    .steps { display: flex; flex-direction: column; }
+    .step { display: flex; gap: 20px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .step:last-child { border-bottom: none; }
+    .step-num { width: 36px; height: 36px; border: 2px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--muted); flex-shrink: 0; margin-top: 2px; transition: border-color .2s, color .2s; }
+    .step:hover .step-num { border-color: var(--blue); color: var(--blue); }
+    .step-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .step-content p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+    .related-section { background: var(--bg-mid); padding: 80px 48px; }
+    .related-inner { max-width: 1100px; margin: 0 auto; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
+    .related-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-decoration: none; color: inherit; transition: all .2s; display: block; }
+    .related-card:hover { box-shadow: 0 6px 24px rgba(26,59,204,0.09); transform: translateY(-2px); border-color: rgba(26,59,204,0.2); }
+    .related-card span { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); display: block; margin-bottom: 8px; }
+    .related-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+    .related-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .service-intro, .cert-inner, .process-inner { grid-template-columns: 1fr; gap: 40px; padding: 56px 20px; }
+      .detail-section, .cert-section, .process-section, .related-section { padding: 56px 20px; }
+      .detail-grid, .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/assets/logo-dark.svg" alt="AD Ingeniería" /></a>
+  <ul class="nav-links">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/nosotros/">Nosotros</a></li>
+    <li><a href="/#servicios" class="active">Servicios</a></li>
+    <li><a href="/proyectos/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/">Contacto</a></li>
+  </ul>
+  <a href="/contacto/" class="btn-primary">Solicitar Evaluación</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=80');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-breadcrumb">
+      <a href="/">Inicio</a><span>/</span><a href="/#servicios">Servicios</a><span>/</span> Redes e Infraestructura
+    </div>
+    <h1>Telecomunicaciones e Infraestructura de Redes</h1>
+    <p>Diseño e implementación de redes corporativas confiables. Cableado estructurado certificado y tecnología Ubiquiti Wireless para entornos de alta exigencia en Chile.</p>
+    <div class="page-hero-actions">
+      <a href="/contacto/" class="btn-primary">Solicitar Evaluación</a>
+      <a href="#soluciones" class="btn-outline-white">Ver Soluciones</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--white);">
+  <div class="service-intro">
+    <div>
+      <span class="section-label">Infraestructura de Redes</span>
+      <h2>La red como base de todas tus operaciones</h2>
+      <p>Una red mal diseñada es el problema que afecta a todas las aplicaciones que corren sobre ella. En AD Ingeniería diseñamos infraestructuras de red pensando en la operación completa del cliente: seguridad, automatización, acceso remoto y continuidad.</p>
+      <p>Trabajamos con tecnología Ubiquiti (certificados), una de las plataformas más robustas y escalables del mercado para entornos corporativos e industriales. Complementamos con cableado estructurado certificado y soluciones de canalización para entornos exigentes.</p>
+    </div>
+    <div class="service-intro-img">
+      <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=80" alt="Infraestructura de red corporativa" />
+    </div>
+  </div>
+</section>
+
+<section class="detail-section" id="soluciones" style="background:var(--bg-soft);">
+  <div class="detail-inner">
+    <span class="section-label">Soluciones</span>
+    <h2 class="section-title">Qué incluye este servicio</h2>
+    <div class="detail-grid">
+      <div class="detail-card">
+        <div class="detail-icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg></div>
+        <h3>Redes Wireless Ubiquiti</h3>
+        <p>Diseño e implementación de redes inalámbricas corporativas con equipos Ubiquiti. Alta densidad de usuarios, cobertura amplia y gestión centralizada desde UniFi Controller.</p>
+        <div class="detail-tags"><span class="detail-tag">Ubiquiti Certificado</span><span class="detail-tag">UniFi</span><span class="detail-tag">Alta Densidad</span><span class="detail-tag">Gestión Central</span></div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon"><svg viewBox="0 0 24 24"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg></div>
+        <h3>Cableado Estructurado</h3>
+        <p>Instalación y certificación de cableado estructurado Cat5e, Cat6 y Cat6A para redes LAN de alto rendimiento. Certificación con equipo Fluke y documentación completa.</p>
+        <div class="detail-tags"><span class="detail-tag">Cat6 / Cat6A</span><span class="detail-tag">Certificado Fluke</span><span class="detail-tag">Rack / Patch Panel</span></div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Configuración LAN/WAN</h3>
+        <p>Diseño y configuración de arquitecturas LAN/WAN: routing, switching, VLANs, QoS, VPN y gestión de ancho de banda para operaciones distribuidas.</p>
+        <div class="detail-tags"><span class="detail-tag">VLAN</span><span class="detail-tag">VPN</span><span class="detail-tag">QoS</span><span class="detail-tag">Routing</span></div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <h3>Canalización Industrial</h3>
+        <p>Instalación de canalización metálica y plástica para entornos industriales y corporativos. Bandejas portacables, ductos y tuberías conduit para instalaciones robustas.</p>
+        <div class="detail-tags"><span class="detail-tag">Conduit</span><span class="detail-tag">Bandejas</span><span class="detail-tag">Entorno Industrial</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cert-section">
+  <div class="cert-inner">
+    <div class="cert-text">
+      <span class="section-label">Certificaciones</span>
+      <h2>Tecnología con respaldo técnico</h2>
+      <p>Trabajar con fabricantes certificados no es solo una ventaja comercial: significa que conocemos en profundidad las plataformas que implementamos, lo que se traduce en proyectos bien ejecutados y soporte técnico real.</p>
+    </div>
+    <div>
+      <div class="cert-badge">
+        <div class="cert-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div>
+          <h3>Certificación Ubiquiti</h3>
+          <p>Certificados en tecnología Ubiquiti UniFi para diseño e implementación de redes inalámbricas corporativas. Conocimiento profundo de la plataforma y soporte post-instalación.</p>
+        </div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-badge-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div>
+          <h3>Certificación de Cableado</h3>
+          <p>Certificación de puntos de red con equipo Fluke según estándares TIA/EIA. Cada punto queda documentado con su informe de certificación y los parámetros eléctricos medidos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="process-inner">
+    <div class="process-intro">
+      <span class="section-label">Proceso</span>
+      <h2>Cómo implementamos tu red</h2>
+      <p>El diseño precede siempre a la instalación. Una red bien diseñada ahorra semanas de problemas futuros.</p>
+      <a href="/contacto/" class="btn-sm" style="margin-top:8px;">Solicitar diagnóstico de red</a>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div class="step-content"><h4>Levantamiento de sitio</h4><p>Visita técnica para evaluar la infraestructura existente, los puntos de acceso necesarios, las distancias y los requerimientos de cobertura y capacidad.</p></div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-content"><h4>Diseño de red</h4><p>Elaboración del plano de red con ubicación de equipos activos y pasivos, topología, diseño de VLANs y presupuesto técnico detallado.</p></div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-content"><h4>Canalización e instalación</h4><p>Instalación de canalización, tendido de cableado certificado y montaje de equipos activos (switches, APs, routers) según el plano aprobado.</p></div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-content"><h4>Configuración y pruebas</h4><p>Configuración de todos los equipos, certificación de cableado estructurado y pruebas de rendimiento de la red completa.</p></div></div>
+      <div class="step"><div class="step-num">05</div><div class="step-content"><h4>Documentación y entrega</h4><p>Entrega de planos As-Built, inventario de equipos, informes de certificación y accesos a la plataforma de gestión.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2>¿Necesitas una red más confiable?</h2>
+      <p>Diagnosticamos tu infraestructura actual y te proponemos mejoras concretas con tecnología certificada.</p>
+    </div>
+    <a href="/contacto/" class="btn-primary">Solicitar Diagnóstico</a>
+  </div>
+</section>
+
+<section class="related-section">
+  <div class="related-inner">
+    <span class="section-label">Servicios Relacionados</span>
+    <h2 class="section-title">Soluciones complementarias</h2>
+    <div class="related-grid">
+      <a href="/servicios/seguridad-electronica/" class="related-card"><span>Seguridad</span><h4>Seguridad Electrónica</h4><p>La red es la base de los sistemas de seguridad. Diseñamos ambas capas de forma integrada para un resultado óptimo.</p></a>
+      <a href="/servicios/automatizacion-power-apps/" class="related-card"><span>Automatización</span><h4>Automatización y Power Apps</h4><p>Las plataformas digitales necesitan infraestructura confiable. Combinamos la red y las aplicaciones en un mismo proyecto.</p></a>
+      <a href="/servicios/seguridad-fisica/" class="related-card"><span>Seguridad Física</span><h4>Seguridad Física y Perimetral</h4><p>Complementa la infraestructura tecnológica con soluciones de protección física para el recinto.</p></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo"><img src="/assets/logo-dark.svg" alt="AD Ingeniería" style="height:22px;filter:brightness(0) invert(1);" /></a>
+      <p>Soluciones de Ingeniería y Tecnología. Desarrollamos e implementamos soluciones orientadas a la integración de sistemas, automatización y optimización de procesos.</p>
+      <div class="socials"><a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a></div>
+    </div>
+    <div class="footer-col"><h5>Navegación</h5><ul><li><a href="/">Inicio</a></li><li><a href="/nosotros/">Nosotros</a></li><li><a href="/#servicios">Servicios</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contacto/">Contacto</a></li></ul></div>
+    <div class="footer-col"><h5>Servicios</h5><ul><li><a href="/servicios/seguridad-electronica/">Seguridad Electrónica</a></li><li><a href="/servicios/automatizacion-power-apps/">Automatización Digital</a></li><li><a href="/servicios/redes-infraestructura/">Redes e Infraestructura</a></li><li><a href="/servicios/seguridad-fisica/">Seguridad Física</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="mailto:contacto@adingenieria.cl">contacto@adingenieria.cl</a></li><li><a href="#">Santiago, Chile</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 AD Ingeniería. Todos los derechos reservados.</div>
+</footer>
+</body>
+</html>
