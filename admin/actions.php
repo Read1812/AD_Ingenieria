@@ -26,26 +26,29 @@ header('Content-Type: application/json; charset=utf-8');
 // El hash se guarda en config.php (mismo directorio).
 // Si no existe, se crea con la contraseña por defecto.
 
-$ADMIN_USER    = 'admin';
+$ADMIN_USER    = getenv('ADMIN_USER') ?: 'admin';
 $CONFIG_FILE   = __DIR__ . '/config.php';
-$DEFAULT_PASS  = 'ADingenieria2025!';
+$DEFAULT_PASS  = getenv('ADMIN_DEFAULT_PASS') ?: null;
 
 if (file_exists($CONFIG_FILE)) {
     // Cargar hash guardado
     $cfg = include $CONFIG_FILE;
-    $ADMIN_HASH = $cfg['hash'] ?? password_hash($DEFAULT_PASS, PASSWORD_BCRYPT);
+    $fallback = $DEFAULT_PASS ? password_hash($DEFAULT_PASS, PASSWORD_BCRYPT) : password_hash(bin2hex(random_bytes(32)), PASSWORD_BCRYPT);
+    $ADMIN_HASH = $cfg['hash'] ?? $fallback;
 } else {
-    // Primera vez: crear config.php con hash de la contraseña por defecto
-    $ADMIN_HASH = password_hash($DEFAULT_PASS, PASSWORD_BCRYPT);
+    // Primera vez: crear config.php con hash proveniente de variable de entorno.
+    // Si no existe ADMIN_DEFAULT_PASS, se genera una contraseña aleatoria para evitar credenciales por defecto.
+    $seedPass = $DEFAULT_PASS ?: bin2hex(random_bytes(24));
+    $ADMIN_HASH = password_hash($seedPass, PASSWORD_BCRYPT);
     $content = "<?php\nreturn ['hash' => " . var_export($ADMIN_HASH, true) . "];\n";
     file_put_contents($CONFIG_FILE, $content);
 }
 
 // ─── DB ───────────────────────────────────────────────────────
-define('DB_HOST',    'localhost');
-define('DB_NAME',    'u977895088_adingen_Db');
-define('DB_USER',    'u977895088_Richard_adm');
-define('DB_PASS',    'AD_InG2026');
+define('DB_HOST',    getenv('DB_HOST') ?: 'localhost');
+define('DB_NAME',    getenv('DB_NAME') ?: '');
+define('DB_USER',    getenv('DB_USER') ?: '');
+define('DB_PASS',    getenv('DB_PASS') ?: '');
 define('DB_CHARSET', 'utf8mb4');
 
 // ─── HELPERS ──────────────────────────────────────────────────
