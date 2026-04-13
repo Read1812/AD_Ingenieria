@@ -2,6 +2,9 @@
 # NOTA: La CSP se eliminó porque Hostinger shared hosting no aplica
 #       mod_headers correctamente. El CSP se gestiona desde PHP.
 
+# ─── Índice de directorio ────────────────────────────────────────────────────
+DirectoryIndex index.html index.php
+
 # ─── Compresión Gzip ─────────────────────────────────────────────────────────
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json
