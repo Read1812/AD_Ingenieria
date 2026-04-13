@@ -18,6 +18,12 @@
 
 # ─── Seguridad básica ────────────────────────────────────────────────────────
 Options -Indexes
+
+# Bloquear acceso directo a archivos de configuración sensibles
+<FilesMatch "^(config\.php|config\.example\.php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
 Header set Content-Security-Policy "
 default-src 'self';
 script-src 'self' https://challenges.cloudflare.com;
