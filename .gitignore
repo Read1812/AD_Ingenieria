@@ -1,5 +1,6 @@
 # Config sensibles
 admin/config.php
+config.php
 
 # Archivos de entorno
 .env

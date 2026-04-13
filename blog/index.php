@@ -1,21 +1,15 @@
 <?php
 // ─── Conexión DB ──────────────────────────────────────────────
-$db_config = [
-    'host'    => 'localhost',
-    'name'    => 'u977895088_adingen_Db',
-    'user'    => 'u977895088_Richard_adm',
-    'pass'    => '[REDACTED_DB_PASS]',
-    'charset' => 'utf8mb4',
-];
+require_once __DIR__ . '/../config.php';
 
 $posts = [];
 $categorias = [];
 
 try {
     $pdo = new PDO(
-        "mysql:host={$db_config['host']};dbname={$db_config['name']};charset={$db_config['charset']}",
-        $db_config['user'],
-        $db_config['pass'],
+        "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET,
+        DB_USER,
+        DB_PASS,
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
     );
 

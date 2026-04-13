@@ -22,13 +22,16 @@ session_start();
 
 header('Content-Type: application/json; charset=utf-8');
 
-// ─── CREDENCIALES ─────────────────────────────────────────────
+// ─── CONFIGURACIÓN CENTRALIZADA ───────────────────────────────
+require_once __DIR__ . '/../config.php';
+
+// ─── CREDENCIALES DE ADMIN ────────────────────────────────────
 // El hash se guarda en config.php (mismo directorio).
 // Si no existe, se crea con la contraseña por defecto.
 
 $ADMIN_USER    = 'admin';
 $CONFIG_FILE   = __DIR__ . '/config.php';
-$DEFAULT_PASS  = '[REDACTED_ADMIN_PASS]';
+$DEFAULT_PASS  = ADMIN_DEFAULT_PASS;
 
 if (file_exists($CONFIG_FILE)) {
     // Cargar hash guardado
@@ -41,12 +44,7 @@ if (file_exists($CONFIG_FILE)) {
     file_put_contents($CONFIG_FILE, $content);
 }
 
-// ─── DB ───────────────────────────────────────────────────────
-define('DB_HOST',    'localhost');
-define('DB_NAME',    'u977895088_adingen_Db');
-define('DB_USER',    'u977895088_Richard_adm');
-define('DB_PASS',    '[REDACTED_DB_PASS]');
-define('DB_CHARSET', 'utf8mb4');
+// DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_CHARSET definidos en config.php
 
 // ─── HELPERS ──────────────────────────────────────────────────
 function resp(bool $ok, string $msg = '', array $data = []): void {

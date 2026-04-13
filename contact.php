@@ -11,25 +11,7 @@ ini_set('display_errors', 0);
 error_reporting(E_ALL);
 
 // ─── CONFIGURACIÓN ────────────────────────────────────────────
-define('CF_TURNSTILE_SECRET', '[REDACTED_CF_SECRET]');
-
-// DB ────────────────────────────────────────────────
-define('DB_HOST',    'localhost');
-define('DB_NAME',    'u977895088_adingen_Db');
-define('DB_USER',    'u977895088_Richard_adm');
-define('DB_PASS',    '[REDACTED_DB_PASS]');
-define('DB_CHARSET', 'utf8mb4');
-
-// MAIL ────────────────────────────────────────────
-define('MAIL_TO',   'contacto@adingenieria.cl');
-define('MAIL_FROM', 'no-reply@adingenieria.cl');
-define('MAIL_NAME', 'AD Ingeniería');
-
-// SMTP────────────────────────────────────────────
-define('SMTP_HOST', 'smtp.hostinger.com');
-define('SMTP_PORT', 465);
-define('SMTP_USER', 'no-reply@adingenieria.cl');
-define('SMTP_PASS', '[REDACTED_SMTP_PASS]');
+require_once __DIR__ . '/config.php';
 
 // ─── HEADERS ─────────────────────────────────────────────────
 header('Content-Type: application/json; charset=utf-8');
@@ -310,8 +292,8 @@ try {
 
     $mail->SMTPOptions = [
         'ssl' => [
-            'verify_peer' => false,
-            'verify_peer_name' => false,
+            'verify_peer'      => true,
+            'verify_peer_name' => true,
         ],
     ];
 
