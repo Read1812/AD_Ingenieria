@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-simple.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingeniería y Desarrollo | Soluciones Tecnológicas para Empresas — AD Ingeniería Chile</title>
+  <meta name="description" content="Automatización de procesos, desarrollo de aplicaciones web y soluciones electrónicas a medida. Combinamos software, hardware y automatización para optimizar la operación de tu empresa." />
+  <meta name="keywords" content="ingeniería desarrollo Chile, automatización procesos, desarrollo aplicaciones web, soluciones electrónicas, Power Platform Chile, IoT Chile, desarrollo software empresarial, hardware a medida, integración sistemas" />
+  <link rel="canonical" href="https://adingenieria.cl/servicios/ingenieria-desarrollo/" />
+  <meta property="og:title" content="Ingeniería y Desarrollo | Soluciones Tecnológicas para Empresas — AD Ingeniería Chile" />
+  <meta property="og:description" content="Automatización de procesos, desarrollo de aplicaciones web y soluciones electrónicas a medida. Combinamos software, hardware y automatización para optimizar la operación de tu empresa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adingenieria.cl/servicios/ingenieria-desarrollo/" />
+  <meta property="og:image" content="https://adingenieria.cl/assets/servicios/ingenieria-desarrollo/og-cover.png" />
+  <meta property="og:locale" content="es_CL" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Ingeniería y Desarrollo","description":"Automatización de procesos, desarrollo de aplicaciones web y soluciones electrónicas a medida para empresas en Chile.","provider":{"@type":"Organization","name":"AD Ingeniería","url":"https://adingenieria.cl"},"areaServed":"CL","serviceType":"Ingeniería y Desarrollo Tecnológico","url":"https://adingenieria.cl/servicios/ingenieria-desarrollo/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://adingenieria.cl/"},{"@type":"ListItem","position":2,"name":"Servicios","item":"https://adingenieria.cl/servicios/"},{"@type":"ListItem","position":3,"name":"Ingeniería y Desarrollo","item":"https://adingenieria.cl/servicios/ingenieria-desarrollo/"}]}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue:#1a3bcc;--blue-dark:#1530a8;--navy:#0d1b3e;--navy-deep:#08122b;--text:#1a1a2e;--muted:#5a6073;--bg-soft:#f4f6fb;--bg-mid:#eef1f9;--border:#e2e6f0;--white:#ffffff; }
+    body { font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6; }
+    nav { position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px; }
+    .nav-logo img { height:40px; }
+    .nav-links { display:flex;gap:28px;list-style:none; }
+    .nav-links a { font-size:13.5px;color:var(--text);text-decoration:none;font-weight:500;opacity:.8;transition:opacity .2s; }
+    .nav-links a:hover { opacity:1; }
+    .nav-links a[aria-current="page"] { opacity:1;color:var(--blue); }
+    .btn-primary { background:var(--blue);color:var(--white);border:none;padding:9px 20px;border-radius:6px;font-size:13.5px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s; }
+    .btn-primary:hover { background:var(--blue-dark); }
+    .btn-outline { background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.7);padding:9px 20px;border-radius:6px;font-size:13.5px;font-weight:600;text-decoration:none;transition:all .2s; }
+    .btn-outline:hover { background:rgba(255,255,255,.12); }
+    .btn-sm { display:inline-block;background:transparent;color:var(--text);border:1.5px solid var(--border);padding:8px 18px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s; }
+    .btn-sm:hover { border-color:var(--blue);color:var(--blue); }
+    .hero { position:relative;min-height:420px;display:flex;align-items:center;background:var(--navy-deep);overflow:hidden; }
+    .hero-bg { position:absolute;inset:0;background:url('/assets/servicios/ingenieria-desarrollo/portada.png') center/cover no-repeat;opacity:.45;filter:contrast(1.1) brightness(.9); }
+    .hero-overlay { position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,18,43,.70) 0%,rgba(13,27,62,.3) 70%,transparent 100%); }
+    .hero-content { position:relative;z-index:2;max-width:620px;padding:80px 48px; }
+    .breadcrumb { font-size:12px;color:rgba(255,255,255,.45);margin-bottom:16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap; }
+    .breadcrumb a { color:rgba(255,255,255,.45);text-decoration:none; }
+    .breadcrumb a:hover { color:rgba(255,255,255,.8); }
+    .hero h1 { font-size:clamp(26px,3.5vw,40px);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:18px; }
+    .hero p { font-size:15px;color:rgba(255,255,255,.70);margin-bottom:30px;line-height:1.7;max-width:500px; }
+    .hero-actions { display:flex;gap:12px;flex-wrap:wrap; }
+    .service-label { display:inline-block;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#38bdf8;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.25);padding:4px 12px;border-radius:100px;margin-bottom:16px; }
+    .section-tag { display:inline-block;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);background:rgba(26,59,204,.07);border:1px solid rgba(26,59,204,.14);padding:4px 12px;border-radius:100px;margin-bottom:14px; }
+    .overview { padding:72px 48px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:start; }
+    .overview h2 { font-size:26px;font-weight:800;margin-bottom:16px;line-height:1.25; }
+    .overview p { font-size:14.5px;color:var(--muted);line-height:1.75;margin-bottom:14px; }
+    .stat-boxes { display:flex;flex-direction:column;gap:16px; }
+    .stat-box { background:var(--bg-soft);border:1px solid var(--border);border-radius:14px;padding:24px 24px;transition:box-shadow .2s; }
+    .stat-box:hover { box-shadow:0 6px 24px rgba(26,59,204,.07); }
+    .stat-number { font-size:28px;font-weight:800;color:var(--blue);line-height:1.2;margin-bottom:4px; }
+    .stat-label { font-size:13.5px;color:var(--muted);line-height:1.5; }
+    .platforms-section { background:var(--bg-soft);padding:80px 48px; }
+    .platforms-inner { max-width:1100px;margin:0 auto; }
+    .platforms-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px; }
+    .platform-card { background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:box-shadow .2s,transform .2s; }
+    .platform-card:hover { box-shadow:0 8px 28px rgba(26,59,204,.09);transform:translateY(-3px); }
+    .p-icon { width:44px;height:44px;background:var(--bg-soft);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid var(--border); }
+    .p-icon svg { width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
+    .platform-card h3 { font-size:16px;font-weight:700;margin-bottom:8px; }
+    .platform-card p { font-size:13.5px;color:var(--muted);line-height:1.65; }
+    .detail-tags { display:flex;flex-wrap:wrap;gap:6px;margin-top:12px; }
+    .detail-tag { font-size:11px;font-weight:600;padding:3px 9px;border-radius:100px;background:var(--bg-soft);border:1px solid var(--border);color:var(--muted); }
+    .cta-band { background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,#112466 100%);padding:72px 48px;position:relative;overflow:hidden; }
+    .cta-band::before { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 90% 50%,rgba(26,59,204,.22) 0%,transparent 70%); }
+    .cta-inner { max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center; }
+    .cta-text h2 { font-size:24px;font-weight:800;color:var(--white);margin-bottom:14px;line-height:1.3; }
+    .cta-text p { font-size:14.5px;color:rgba(255,255,255,.68);line-height:1.7; }
+    .cta-actions { display:flex;flex-direction:column;gap:10px;align-items:flex-start; }
+    .cta-note { font-size:12px;color:rgba(255,255,255,.35); }
+    .related-section { background:var(--white);padding:80px 48px; }
+    .related-inner { max-width:1100px;margin:0 auto; }
+    .related-link { display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--blue);text-decoration:none;margin-top:20px;transition:gap .2s; }
+    .related-link:hover { gap:12px; }
+    .related-link svg { width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round; }
+    footer { background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);padding:52px 48px 28px; }
+    .footer-inner { max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08); }
+    .footer-brand img { height:70px;margin-bottom:12px; }
+    .footer-brand p { font-size:13px;color:rgba(255,255,255,.35);line-height:1.65;max-width:260px; }
+    .footer-col h5 { font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:9px; }
+    .footer-col ul li a { font-size:13.5px;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s; }
+    .footer-col ul li a:hover { color:rgba(255,255,255,.9); }
+    .footer-bottom { max-width:1100px;margin:22px auto 0;font-size:12px;color:rgba(255,255,255,.20);text-align:center; }
+    @media (max-width:900px) {
+      nav { padding:0 20px; }
+      .nav-links { display:none; }
+      .hero-content { padding:60px 20px; }
+      .platforms-section,.related-section { padding-left:20px;padding-right:20px; }
+      .overview { grid-template-columns:1fr;gap:36px;padding:52px 20px; }
+      .platforms-grid { grid-template-columns:1fr; }
+      .cta-band { padding:56px 20px; }
+      .cta-inner { grid-template-columns:1fr;gap:28px; }
+      .footer-inner { grid-template-columns:1fr 1fr;gap:28px; }
+      footer { padding:40px 20px 24px; }
+    }
+    @media (max-width:480px) { .footer-inner { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" style="text-decoration:none;"><img src="/assets/logo-dark.svg" alt="AD Ingeniería" height="35"></a>
+  <ul class="nav-links"><li><a href="/">Inicio</a></li><li><a href="/nosotros/">Nosotros</a></li><li><a href="/servicios/" aria-current="page">Servicios</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contacto/">Contacto</a></li></ul>
+  <a href="/contacto/" class="btn-primary">Contacto</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="breadcrumb"><a href="/">Inicio</a><span>&gt;</span><a href="/servicios/">Servicios</a><span>&gt;</span><span>Ingeniería y Desarrollo</span></div>
+    <h1>Automatización, Desarrollo y Electrónica para tu Empresa</h1>
+    <p>Soluciones integrales que combinan software, automatización y electrónica para optimizar procesos empresariales.</p>
+    <div class="hero-actions"><a href="/contacto/" class="btn-primary">Solicitar Evaluación</a></div>
+  </div>
+</section>
+
+<section class="overview" aria-labelledby="overview-heading">
+  <div>
+    <span class="section-tag">El problema</span>
+    <h2 id="overview-heading">Procesos manuales, sistemas desconectados y costos ocultos</h2>
+    <p>Tu empresa tiene procesos que dependen de hojas de cálculo, tareas manuales o sistemas que no se comunican entre sí. Eso genera errores, pérdida de tiempo y costos ocultos.</p>
+    <p>Nuestra línea de Ingeniería y Desarrollo resuelve estos problemas integrando automatización de procesos, aplicaciones a medida y soluciones electrónicas personalizadas.</p>
+  </div>
+  <div class="stat-boxes">
+    <div class="stat-box"><div class="stat-number">3 en 1</div><div class="stat-label">Software + Hardware + Automatización</div></div>
+    <div class="stat-box"><div class="stat-number">100%</div><div class="stat-label">Soluciones a medida</div></div>
+    <div class="stat-box"><div class="stat-number">M365</div><div class="stat-label">Integración Microsoft 365</div></div>
+  </div>
+</section>
+
+<section class="platforms-section" aria-labelledby="solutions-heading">
+  <div class="platforms-inner">
+    <span class="section-tag">Nuestras soluciones</span>
+    <h2 id="solutions-heading">Soluciones que Entregamos</h2>
+    <div class="platforms-grid">
+      <div class="platform-card">
+        <div class="p-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Automatización de Procesos</h3>
+        <p>¿Tu equipo pierde horas en tareas repetitivas? Automatizamos flujos de trabajo con Microsoft Power Platform: aprobaciones, reportes, notificaciones y procesos completos que antes dependían de intervención manual.</p>
+        <div class="detail-tags"><span class="detail-tag">Power Apps</span><span class="detail-tag">Power Automate</span><span class="detail-tag">Power BI</span><span class="detail-tag">Microsoft 365</span></div>
+      </div>
+      <div class="platform-card">
+        <div class="p-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Desarrollo de Aplicaciones Web a Medida</h3>
+        <p>Cuando las herramientas genéricas no se adaptan a tu negocio, creamos aplicaciones web específicas para tu operación. Sistemas de gestión, portales, dashboards y plataformas internas diseñadas para tus necesidades reales.</p>
+        <div class="detail-tags"><span class="detail-tag">Aplicaciones Web</span><span class="detail-tag">APIs</span><span class="detail-tag">Sistemas de Gestión</span><span class="detail-tag">Portales</span></div>
+      </div>
+      <div class="platform-card">
+        <div class="p-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3>Desarrollo Electrónico Personalizado</h3>
+        <p>Equipos analógicos que no registran datos, máquinas que no se conectan a tu red, procesos físicos sin control digital. Diseñamos soluciones electrónicas que digitalizan y conectan lo que antes era invisible.</p>
+        <div class="detail-tags"><span class="detail-tag">IoT</span><span class="detail-tag">Diseño Electrónico</span><span class="detail-tag">Hardware a Medida</span><span class="detail-tag">Integración</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band"><div class="cta-inner">
+  <div class="cta-text"><h2>¿Necesitas optimizar tu operación?</h2><p>Cuéntanos qué problema enfrentas. Evaluamos tu caso sin costo y te proponemos la mejor combinación de automatización, desarrollo y electrónica.</p></div>
+  <div class="cta-actions"><a href="/contacto/" class="btn-primary">Solicitar Evaluación Gratuita</a><p class="cta-note">Respuesta en menos de 24 horas hábiles · Sin compromiso</p></div>
+</div></section>
+
+<section class="related-section"><div class="related-inner">
+  <span class="section-tag">Recursos</span>
+  <h2 style="font-size:22px;font-weight:800;margin-top:8px;">Artículos relacionados</h2>
+  <p style="font-size:14.5px;color:var(--muted);max-width:520px;line-height:1.7;margin-top:10px;">Publicamos contenido sobre automatización, desarrollo y tecnología aplicada a empresas.</p>
+  <a href="/blog/" class="related-link">Ver todos los artículos <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div></section>
+
+<footer><div class="footer-inner">
+  <div class="footer-brand"><img src="/assets/logo-white.svg" alt="AD Ingeniería"><p>Ingeniería y tecnología B2B en Chile. Automatización, desarrollo de software y soluciones electrónicas a medida.</p></div>
+  <div class="footer-col"><h5>Servicios</h5><ul><li><a href="/servicios/ingenieria-desarrollo/">Ingeniería y Desarrollo</a></li><li><a href="/servicios/seguridad-electronica/">Seguridad Electrónica</a></li></ul></div>
+  <div class="footer-col"><h5>Empresa</h5><ul><li><a href="/nosotros/">Nosotros</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+  <div class="footer-col"><h5>Contacto</h5><ul><li><a href="mailto:contacto@adingenieria.cl">contacto@adingenieria.cl</a></li><li><a href="/contacto/">Formulario</a></li><li><a href="https://maps.google.com/?q=Santiago,Chile" rel="noopener">Santiago, Chile</a></li></ul></div>
+</div>
+<p class="footer-bottom">&copy; <span id="yr"></span> AD Ingeniería SpA · Todos los derechos reservados</p>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</footer>
+</body>
+</html>
