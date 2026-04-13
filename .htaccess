@@ -18,8 +18,23 @@
 
 # ─── Seguridad básica ────────────────────────────────────────────────────────
 Options -Indexes
+DirectoryIndex index.html index.php
+
+# Fallback para hosts donde el DocumentRoot apunta correctamente pero no
+# resuelve el índice por defecto en la primera carga.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.html [L]
+</IfModule>
 
 # Bloquear acceso directo a archivos de configuración sensibles
 <FilesMatch "^(config\.php|config\.example\.php)$">
-    Require all denied
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Deny from all
+    </IfModule>
 </FilesMatch>
